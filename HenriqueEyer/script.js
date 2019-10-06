@@ -1,6 +1,18 @@
+console.log(localStorage);
+
+
 add_event_click_on_btn_input(return_element_HTML_by_id('btn_input'));
 add_event_click_on_btn_excluir(return_element_HTML_by_id('btn_excluir_ALL'))
 add_event_click_on_btn_excluir_item(return_element_HTML_by_id('btn_excluir_item'))
+add_event_click_on_btn_excluir_completos(return_element_HTML_by_id('btn_excluir_completos'))
+
+
+
+function add_event_click_on_btn_excluir_completos(btn){
+    btn.addEventListener('click', function(){
+        delete_all_completed_item();
+    })
+}
 
 function add_event_click_on_btn_excluir(btn){
     btn.addEventListener('click', function(){
@@ -11,10 +23,8 @@ function add_event_click_on_btn_excluir(btn){
 function add_event_click_on_btn_excluir_item(btn){
     btn.addEventListener('click', function(){
        delete_element(return_element_HTML_by_id('select'))
-       console.log(return_element_HTML_by_id('select'))
     })
 }
-
 
 function delete_all_item(){
     let list=return_list_by_tag_name('li');
@@ -23,8 +33,27 @@ function delete_all_item(){
     for(i=0;i<size_list;i++){
         delete_element(list[0]);
     }
+}
+
+function delete_all_completed_item(){
+    let list=return_list_by_class_name('completed');
+    let size_list=list.length;
+    let i;
+    for(i=0;i<size_list;i++){
+        delete_element(list[0]);
+    }
 
 }
+
+
+
+
+
+function return_list_by_class_name(name){
+    let elements=document.getElementsByClassName(name);
+    return elements;
+}
+
 
 function return_list_by_tag_name(name){
     let elements=document.getElementsByTagName(name);
@@ -43,12 +72,10 @@ function add_event_click_on_li_for_mark_item_with_line(element){
 }
 
 function mark_li_double_click(element){
-    if(element.style.color!="rgb(128, 128, 128)"){
-        element.style.textDecoration="line-through";
-        element.style.color="#808080"
+    if(element.className!="completed"){
+        element.className="completed"
         }else{
-            element.style.textDecoration="none";
-            element.style.color="black"
+            element.className="";
         }
 }
 

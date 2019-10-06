@@ -1,0 +1,12 @@
+.completed{
+    text-decoration:line-through;
+    color:#808080;
+}
+
+.btn{
+    cursor:pointer;
+}
+
+.btn:hover{
+    filter: contrast(110%);
+}
