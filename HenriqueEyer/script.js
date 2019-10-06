@@ -1,11 +1,37 @@
-console.log(localStorage);
-
-
+reload_list();
 add_event_click_on_btn_input(return_element_HTML_by_id('btn_input'));
 add_event_click_on_btn_excluir(return_element_HTML_by_id('btn_excluir_ALL'))
 add_event_click_on_btn_excluir_item(return_element_HTML_by_id('btn_excluir_item'))
 add_event_click_on_btn_excluir_completos(return_element_HTML_by_id('btn_excluir_completos'))
+add_event_btn_salvar(return_element_HTML_by_id('btn_salvar'))
 
+function save_list(){
+    localStorage.clear();
+    let list = return_list_by_tag_name('li') 
+    let i;
+    let text;
+    for (i=0;i<list.length;i++){
+        text=list[i].textContent;
+        if(text!=""){
+            localStorage.setItem('list'+i,text);
+        }
+    }
+}
+
+function reload_list(){
+    let i;
+    for(i=0;i<localStorage.length;i++){
+        let text=localStorage["list"+i];
+        add_element_inside_ol(add_text_inside_item_li(create_element_li(),text),return_element_HTML_by_id('ol_list'));
+    }
+}
+
+function add_event_btn_salvar(btn){
+    btn.addEventListener('click' , function (){
+        save_list();
+        
+    })
+}
 
 
 function add_event_click_on_btn_excluir_completos(btn){
@@ -44,10 +70,6 @@ function delete_all_completed_item(){
     }
 
 }
-
-
-
-
 
 function return_list_by_class_name(name){
     let elements=document.getElementsByClassName(name);
