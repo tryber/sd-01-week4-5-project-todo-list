@@ -1,9 +1,19 @@
 add_event_click_on_btn_input(return_element_HTML_by_id('btn_input'));
 
 
+
+
+function add_event_click_on_li_for_mark_item_with_line(element){
+    element.addEventListener('dblclick', function(){
+        console.log("foi")
+        this.style.textDecoration="line-through";
+        this.style.color="#808080"
+    })
+}
+
 function add_event_click_on_li_for_trace_item(element){
     element.addEventListener('click', function(){
-        this.style.background="#DCDCDC";
+        this.style.background="#F8F8FF	";
     })
 }
 
@@ -23,6 +33,7 @@ function add_element_inside_ol(elementfilho,elementpai){
 function add_text_inside_item_li(element,txt){
     element.innerHTML=txt;
     add_event_click_on_li_for_trace_item(element);
+    add_event_click_on_li_for_mark_item_with_line(element);
     return element;
 }
 
