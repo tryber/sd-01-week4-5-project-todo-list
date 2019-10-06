@@ -1,11 +1,20 @@
 add_event_click_on_btn_input(return_element_HTML_by_id('btn_input'));
 add_event_click_on_btn_excluir(return_element_HTML_by_id('btn_excluir_ALL'))
+add_event_click_on_btn_excluir_item(return_element_HTML_by_id('btn_excluir_item'))
 
 function add_event_click_on_btn_excluir(btn){
-    btn.addEventListener('click',function(){
+    btn.addEventListener('click', function(){
        delete_all_item();
     })
 }
+
+function add_event_click_on_btn_excluir_item(btn){
+    btn.addEventListener('click', function(){
+       delete_element(return_element_HTML_by_id('select'))
+       console.log(return_element_HTML_by_id('select'))
+    })
+}
+
 
 function delete_all_item(){
     let list=return_list_by_tag_name('li');
@@ -29,9 +38,18 @@ function delete_element(element){
 
 function add_event_click_on_li_for_mark_item_with_line(element){
     element.addEventListener('dblclick', function(){
-        this.style.textDecoration="line-through";
-        this.style.color="#808080"
+        mark_li_double_click(this)
     })
+}
+
+function mark_li_double_click(element){
+    if(element.style.color!="rgb(128, 128, 128)"){
+        element.style.textDecoration="line-through";
+        element.style.color="#808080"
+        }else{
+            element.style.textDecoration="none";
+            element.style.color="black"
+        }
 }
 
 function remove_attriubute_background_and_id_all_li(){
