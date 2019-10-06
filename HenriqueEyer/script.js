@@ -11,7 +11,6 @@ function delete_all_item(){
     let list=return_list_by_tag_name('li');
     let size_list=list.length;
     let i;
-
     for(i=0;i<size_list;i++){
         delete_element(list[0]);
     }
@@ -35,9 +34,21 @@ function add_event_click_on_li_for_mark_item_with_line(element){
     })
 }
 
+function remove_attriubute_background_and_id_all_li(){
+    let list=return_list_by_tag_name('li');
+    let size_list=list.length;
+    let i;
+    for(i=0;i<size_list;i++){
+        list[i].style.background="";
+        list[i].removeAttribute("id");
+    }
+}
+
 function add_event_click_on_li_for_trace_item(element){
     element.addEventListener('click', function(){
-        this.style.background="#F8F8FF";
+        remove_attriubute_background_and_id_all_li();
+        this.id="select";
+        this.style.background="#A9A9A9";
     })
 }
 
