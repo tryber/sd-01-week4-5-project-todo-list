@@ -23,16 +23,20 @@ function add_event_btn_down(element){
 
 
 function move_up_item(element){
-    let item_pai=element.parentNode;
-    item_pai.insertBefore(element,element.previousElementSibling);
+    if(element){
+        let item_pai=element.parentNode;
+        item_pai.insertBefore(element,element.previousElementSibling);
+    }
 }
 
 function move_down_item(element){
-    let item_pai=element.parentNode;
-    if(element==item_pai.lastChild){
-        item_pai.insertBefore(element,item_pai.firstElementChild); 
-    }else{
-        item_pai.insertBefore(element.nextElementSibling,element); 
+    if(element){
+        let item_pai=element.parentNode;
+        if(element==item_pai.lastChild){
+            item_pai.insertBefore(element,item_pai.firstElementChild); 
+        }else{
+            item_pai.insertBefore(element.nextElementSibling,element); 
+        }
     }
 }
 
@@ -74,13 +78,13 @@ function add_event_click_on_btn_excluir_completos(btn){
 
 function add_event_click_on_btn_excluir(btn){
     btn.addEventListener('click', function(){
-       delete_all_item();
+        delete_all_item();
     })
 }
 
 function add_event_click_on_btn_excluir_item(btn){
     btn.addEventListener('click', function(){
-       delete_element(return_element_HTML_by_id('select'))
+        delete_element(return_element_HTML_by_id('select'))
     })
 }
 
@@ -100,7 +104,7 @@ function delete_all_completed_item(){
     for(i=0;i<size_list;i++){
         delete_element(list[0]);
     }
-
+    
 }
 
 function return_list_by_class_name(name){
@@ -128,9 +132,9 @@ function add_event_click_on_li_for_mark_item_with_line(element){
 function mark_li_double_click(element){
     if(element.className!="completed"){
         element.className="completed"
-        }else{
-            element.className="";
-        }
+    }else{
+        element.className="";
+    }
 }
 
 function remove_attriubute_background_and_id_all_li(){

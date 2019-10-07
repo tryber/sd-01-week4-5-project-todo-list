@@ -21,8 +21,9 @@ font-family: 'Permanent Marker', cursive
 li{
     cursor:pointer;
 }
-.btn:hover{
-    filter: contrast(120%);
+button:hover{
+    filter: contrast(250%);
+    
 }
 
 main{
@@ -44,19 +45,66 @@ body{
 
 .container{
     background: white;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Mansalva', cursive;
     border:2px #000000 solid;
-    width: 40%;
+    width: auto;
     height: auto;
-    padding: 15 40 60 60px;
+    padding: 15 40 40 40px;
 }
 
 .btn{
     border-radius: 50px;
     border: 0px;
     padding: 10px 20px;
+    margin: 5px;
+    color: aliceblue;
+    font-size: 15px;
+    font-family: 'Permanent Marker', cursive
 }
 
 .btn img{
-    height: 15px;
+    height: 13px;
+}
+
+.blue{
+    background: darkblue;
+}
+
+.red{
+    background:darkred;
+}
+
+.green{
+    background: green;
+}
+
+.orange{
+    background: orange;
+}
+
+li{
+    font-size: 20px;
+}
+
+#input_txt{
+    font-size: 20px;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+}
+h1{
+    display: flex;
+    align-items: center;
+    font-size:40px;
+}
+
+h1 img{
+    height:40px;
+    margin-left: 10px;
+}
+
+.instructions{
+    font-size:20px;
 }
