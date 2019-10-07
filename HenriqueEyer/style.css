@@ -1,3 +1,8 @@
+
+*{
+    box-sizing: border-box
+}
+
 .completed{
     text-decoration:line-through;
     color:#808080;
@@ -5,8 +10,28 @@
 
 .btn{
     cursor:pointer;
+} 
+li{
+    cursor:pointer;
 }
-
 .btn:hover{
     filter: contrast(110%);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    
+    align-content: center;
+    justify-content: center;
+
+    width:100%;
+    height: 100%;
+}
+
+.container{
+
+    border:2px black solid;
+    width: 80%;
+    height: auto;
 }

@@ -4,6 +4,39 @@ add_event_click_on_btn_excluir(return_element_HTML_by_id('btn_excluir_ALL'))
 add_event_click_on_btn_excluir_item(return_element_HTML_by_id('btn_excluir_item'))
 add_event_click_on_btn_excluir_completos(return_element_HTML_by_id('btn_excluir_completos'))
 add_event_btn_salvar(return_element_HTML_by_id('btn_salvar'))
+add_event_btn_down(return_element_HTML_by_id('btn_down'))
+add_event_btn_up(return_element_HTML_by_id('btn_up'))
+
+
+function add_event_btn_up(element){
+    element.addEventListener('click',function(){
+        move_up_item(return_element_HTML_by_id('select'))
+    })
+}
+
+function add_event_btn_down(element){
+    element.addEventListener('click',function(){
+        move_down_item(return_element_HTML_by_id('select'))
+    })
+}
+
+
+
+function move_up_item(element){
+    let item_pai=element.parentNode;
+    item_pai.insertBefore(element,element.previousElementSibling);
+}
+
+function move_down_item(element){
+    let item_pai=element.parentNode;
+    if(element==item_pai.lastChild){
+        item_pai.insertBefore(element,item_pai.firstElementChild); 
+    }else{
+        item_pai.insertBefore(element.nextElementSibling,element); 
+    }
+}
+
+
 
 function save_list(){
     localStorage.clear();
@@ -11,9 +44,8 @@ function save_list(){
     let i;
     let text;
     for (i=0;i<list.length;i++){
-        text=list[i].textContent;
-        if(text!=""){
-            localStorage.setItem('list'+i,text);
+        if(list[i].textContent!=""){
+            localStorage.setItem('list'+i,list[i].textContent);
         }
     }
 }
