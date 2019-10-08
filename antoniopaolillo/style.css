@@ -1,3 +1,6 @@
 .tarefa{
     cursor:pointer;
 }
+#botaoselecionado{
+    background-color: grey;
+}
