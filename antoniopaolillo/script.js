@@ -1,5 +1,6 @@
 var botaoSelecionado;
-function botaoAdicionar() {
+
+function adicionarTarefa() {
     let nomeTarefa = document.getElementById('inputtxt');
     let nomeTarefaValue = nomeTarefa.value;
     let novoElemento = document.createElement('li');
@@ -43,7 +44,7 @@ function apagarTodosElementos() {
 
 }
 
-function apagarElementoCompletos() {
+function apagarElementosCompletos() {
     let todosElementos = document.getElementsByTagName('li').length - 1;
     let elementoPai = document.getElementsByClassName('containerOl')[0];
     let elementoCompleto;
@@ -57,9 +58,23 @@ function apagarElementoCompletos() {
 
 }
 
-function apagarElementoSelecionado(){
+function apagarElementoSelecionado() {
     let elementoPai = document.getElementsByClassName('containerOl')[0];
     elementoPai.removeChild(botaoSelecionado);
+}
+
+function subirElemento() {
+    let elementoPai = document.getElementsByClassName('containerOl')[0];
+    let proximoElemento = botaoSelecionado.previousElementSibling;
+
+    elementoPai.insertBefore(botaoSelecionado, proximoElemento);
+}
+
+function descerElemento() {
+    let elementoPai = document.getElementsByClassName('containerOl')[0];
+    let proximoElemento = botaoSelecionado.nextElementSibling;
+
+    elementoPai.insertBefore(proximoElemento, botaoSelecionado);
 }
 
 
