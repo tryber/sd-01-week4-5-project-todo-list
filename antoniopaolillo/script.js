@@ -57,5 +57,10 @@ function apagarElementoCompletos() {
 
 }
 
+function apagarElementoSelecionado(){
+    let elementoPai = document.getElementsByClassName('containerOl')[0];
+    elementoPai.removeChild(botaoSelecionado);
+}
+
 
 

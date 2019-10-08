@@ -4,3 +4,6 @@
 #botaoselecionado{
     background-color: grey;
 }
+.tarefa:hover{
+    background-color: green;
+}
