@@ -1,0 +1,88 @@
+body {
+    background: darkred;
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 80vw;
+    height: 50vh;
+    background: lightyellow;
+    border-radius: 40px;
+    padding: 35px;
+}
+
+.title {
+    color: darkred;
+}
+
+.subtitle {
+    font-style: italic;
+    color: lightslategray;
+}
+
+.btnAdicionar {
+    background: #d10c4b;
+    background-image: -webkit-linear-gradient(top, #d10c4b, #e00303);
+    background-image: -moz-linear-gradient(top, #d10c4b, #e00303);
+    background-image: -ms-linear-gradient(top, #d10c4b, #e00303);
+    background-image: -o-linear-gradient(top, #d10c4b, #e00303);
+    background-image: linear-gradient(to bottom, #d10c4b, #e00303);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 7px 16px 7px 16px;
+    text-decoration: none;
+    border-width: 0px;
+}
+
+.btnAdicionar:hover {
+    background: #bf0000;
+    background-image: -webkit-linear-gradient(top, #bf0000, #bd0000);
+    background-image: -moz-linear-gradient(top, #bf0000, #bd0000);
+    background-image: -ms-linear-gradient(top, #bf0000, #bd0000);
+    background-image: -o-linear-gradient(top, #bf0000, #bd0000);
+    background-image: linear-gradient(to bottom, #bf0000, #bd0000);
+    text-decoration: none;
+}
+
+.btnX {
+    background: #730000;
+    background-image: -webkit-linear-gradient(top, #730000, #850000);
+    background-image: -moz-linear-gradient(top, #730000, #850000);
+    background-image: -ms-linear-gradient(top, #730000, #850000);
+    background-image: -o-linear-gradient(top, #730000, #850000);
+    background-image: linear-gradient(to bottom, #730000, #850000);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    border-width: 0px;
+  }
+  
+  .btnX:hover {
+    background: #8c0000;
+    background-image: -webkit-linear-gradient(top, #8c0000, #d40000);
+    background-image: -moz-linear-gradient(top, #8c0000, #d40000);
+    background-image: -ms-linear-gradient(top, #8c0000, #d40000);
+    background-image: -o-linear-gradient(top, #8c0000, #d40000);
+    background-image: linear-gradient(to bottom, #8c0000, #d40000);
+    text-decoration: none;
+  }
