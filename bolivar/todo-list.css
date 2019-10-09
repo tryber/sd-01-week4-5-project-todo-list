@@ -1,0 +1,11 @@
+#selected-item{
+    background-color: #DF2935;
+    padding: 10px;
+    border-radius: 50px;
+}
+.marked-item{
+    text-decoration: line-through;
+}
+#button{
+    cursor: move;
+}
