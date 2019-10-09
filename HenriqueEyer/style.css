@@ -29,37 +29,44 @@ button:hover{
 main{
     width: 100vw;
     height: 100vh;
-    background:url("/icons/images.jpeg");
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     padding:150px;
-    
 }
 
-body{
-    margin: 0;
-    padding: 0;
+.sub-div{
+    padding: 20px;
 }
+
 
 .container{
     background: white;
-    font-family: 'Mansalva', cursive;
-    border:2px #000000 solid;
+    font-family: 'Righteous', cursive;
+    border:1px #000000 solid;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    flex-direction:column;
     width: auto;
     height: auto;
-    padding: 15 40 40 40px;
+    background: darkorange;
+    text-align: center;
+    align-items: center;
 }
 
 .btn{
-    border-radius: 50px;
     border: 0px;
     padding: 10px 20px;
     margin: 5px;
     color: aliceblue;
     font-size: 15px;
-    font-family: 'Permanent Marker', cursive
+    font-family: 'Righteous', cursive;
 }
 
 .btn img{
@@ -82,17 +89,21 @@ body{
     background: orange;
 }
 
+
 li{
+    border-bottom: 1px silver solid;
     font-size: 20px;
+    word-break: break-all;
+    height: 30px;
 }
 
 #input_txt{
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .input{
     display: flex;
-    align-items: center;
+    flex-direction:column;
 }
 h1{
     display: flex;

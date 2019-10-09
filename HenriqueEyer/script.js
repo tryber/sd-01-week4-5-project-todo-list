@@ -58,7 +58,7 @@ function reload_list(){
     let i;
     for(i=0;i<localStorage.length;i++){
         let text=localStorage["list"+i];
-        add_element_inside_ol(add_text_inside_item_li(create_element_li(),text),return_element_HTML_by_id('ol_list'));
+        put_element_inside_ol(add_text_inside_item_li(create_element_li(),text),return_element_HTML_by_id('ol_list'));
     }
 }
 
@@ -84,7 +84,9 @@ function add_event_click_on_btn_excluir(btn){
 
 function add_event_click_on_btn_excluir_item(btn){
     btn.addEventListener('click', function(){
-        delete_element(return_element_HTML_by_id('select'))
+        if(return_element_HTML_by_id('select')){
+            delete_element(return_element_HTML_by_id('select'))
+        }
     })
 }
 
@@ -151,20 +153,20 @@ function add_event_click_on_li_for_trace_item(element){
     element.addEventListener('click', function(){
         remove_attriubute_background_and_id_all_li();
         this.id="select";
-        this.style.background="#A9A9A9";
+        this.style.background="#424C55";
     })
 }
 
 function add_event_click_on_btn_input(element){
     element.addEventListener('click',function(){
-        //SIM isso funciona linha
-        //cria o li, e adiciona o texto nele e depois o coloca no ol.
-        add_element_inside_ol(add_text_inside_item_li(create_element_li(),return_element_HTML_by_id('input_txt').value),return_element_HTML_by_id('ol_list'));
-        
+        if(return_element_HTML_by_id('input_txt').value){
+            put_element_inside_ol(add_text_inside_item_li(create_element_li(),return_element_HTML_by_id('input_txt').value),return_element_HTML_by_id('ol_list'));
+            return_element_HTML_by_id('input_txt').value="";
+        }
     })
 }
 
-function add_element_inside_ol(elementfilho,elementpai){
+function put_element_inside_ol(elementfilho,elementpai){
     elementpai.appendChild(elementfilho);
 }
 

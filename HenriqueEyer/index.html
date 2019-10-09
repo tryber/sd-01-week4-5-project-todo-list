@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>To do list</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Mansalva|Permanent+Marker|Righteous|Roboto+Mono|Shadows+Into+Light&display=swap" rel="stylesheet">
     
@@ -11,25 +11,27 @@
 <body>
     <main>
         <div class="container">
-        <h1 class="title">Minha lista de tarefas <img src="icons/clipboard.png" alt="" srcset=""></h1>
-        <h4 class="instructions">Clique duas vezes em um item para marcá-lo</h4>
-        
-        <span class="input"><input type="text" name="" id="input_txt"><button type="button" value="Adicionar" id="btn_input" class="btn blue">Adicionar</button></button></span>
-        <hr>
-        <ol class="list" id="ol_list">
-
-        </ol>
-        <hr>
-        <span class="buttons_bottom">
-        <button class="btn red" id="btn_excluir_item" type="button" value="excluir selecionado"><img src="icons/delete.png" alt="" srcset=""></button>
-        <button class="btn orange" id="btn_up" type="button" value="subir"><img src="icons/arrow-up-thick.png" alt="" srcset=""></button>
-        <button class="btn orange" id="btn_down" type="button" value="descer"><img src="icons/arrow-down-thick.png" alt="" srcset=""></button>
-        <br>
-        <button class="btn blue" id="btn_excluir_completos" type="button" value="Limpar Completos">limpar Completos</button>
-        <button class="btn red" id="btn_excluir_ALL" type="button" value="Limpar Lista">Limpar lista</button>
-        <button class="btn green" id="btn_salvar" type="button" value="Salvar Lista">Salvar</button></span>
-        </div>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+            <nav class="header">
+                <h1 class="title">Minha lista de tarefas <img src="icons/clipboard.png" alt="" srcset=""></h1>
+                <h4 class="instructions">Clique duas vezes em um item para marcá-lo</h4>
+            </nav>
+            
+            
+            <span class="sub-div input"><input type="text" name="" id="input_txt" placeholder="Nova tarefa"><button type="button" value="Adicionar" id="btn_input" class="btn blue">Adicionar</button></span>
+            <div class="sub-div div-list">
+            <ol class="list" id="ol_list">
+                
+            </ol>
+            </div>
+            <div class="buttons_bottom sub-div">
+                <button class="btn red" id="btn_excluir_item" type="button" value="excluir selecionado"><img src="icons/delete.png" alt="" srcset=""></button>
+                <button class="btn orange" id="btn_up" type="button" value="subir"><img src="icons/arrow-up-thick.png" alt="" srcset=""></button>
+                <button class="btn orange" id="btn_down" type="button" value="descer"><img src="icons/arrow-down-thick.png" alt="" srcset=""></button>
+                <button class="btn blue" id="btn_excluir_completos" type="button" value="Limpar Completos">limpar Completos</button>
+                <button class="btn red" id="btn_excluir_ALL" type="button" value="Limpar Lista">Limpar lista</button>
+                <button class="btn green" id="btn_salvar" type="button" value="Salvar Lista">Salvar</button></span>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+    </html>
