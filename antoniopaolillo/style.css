@@ -1,9 +1,85 @@
+body{
+    background-color: rgb(1, 160, 0);
+}
 .tarefa{
     cursor:pointer;
 }
-#botaoselecionado{
+#tarefaSelecionada{
     background-color: grey;
 }
 .tarefa:hover{
-    background-color: green;
+    background-color: rgb(1, 160, 0);
+}
+.container{
+    background-color:rgb(255, 244, 247);
+    width: 50%;
+    height: 30%;
+    border-radius: 20px;
+    font-size: 18px;
+    margin: auto;
+}
+.textoMaior{
+    font-size: 35px;
+    margin-left: 8%;
+    font-style: oblique;
+}
+.textoMenor{
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif; 
+}
+.botaotipo1{
+    background-color: rgb(132, 0, 0);
+    color: white;
+    width: 12%;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.botaotipo2{
+    background-image: url(upimg2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 17px;
+    background-color: rgb(254, 161, 25);
+    width: 8%;   
+    height: 22px;
+    border-radius: 11px;
+}
+.botaotipo3{
+    background-image: url(upimg3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 17px;
+    background-color: rgb(254, 161, 25);
+    width: 8%;   
+    height: 22px;
+    border-radius: 11px;
+    
+}
+.botaotipo4, .botaoAdicionar{
+    background-color: rgb(65, 105, 225);
+    color: white;
+    width: 17%;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-bottom: 2%;
+}
+.botaotipo5{
+    background-color: rgb(132, 0, 0);
+    color: white;
+    width: 15%;
+    border-radius: 10px;
+    font-size: 15px
+}
+.botaotipo6{
+    background-color: rgb(1, 160, 0);
+    color: white;
+    width: 15%;
+    border-radius: 10px;
+    font-size: 15px
+}
+#inputtxt{
+    margin-left: 5%;
+    width: 25%;
+    border-radius: 8px;
 }

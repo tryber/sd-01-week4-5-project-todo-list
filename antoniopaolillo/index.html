@@ -14,19 +14,19 @@
 
 <body>
 
-    <main>
+    <main class="container">
 
         <div class="cabecalho">
             <p class="textoMaior">Minha lista de tarefas</p>
             <p class="textoMenor">
                 Digite o item e clique em adicionar.
-                Clique duas vezes na tarefa para marca-la como realizada.
+                Clique duas vezes na tarefa para marcá-la como realizada.
             </p>
         </div>
 
         <div class="inputs">
-            <input type="text" id="inputtxt">
-            <button class="button" onclick="adicionarTarefa()">Adicionar</button>
+            <input type="text" id="inputtxt" maxlength="90">
+            <button class="botaoAdicionar" onclick="adicionarTarefa()">Adicionar</button>
         </div>
 
         <div class="containerTarefas">
@@ -35,12 +35,12 @@
         </div>
 
         <div class="botoes">
-            <button class="botaotipo1" onclick="apagarElementoSelecionado()">excluir</button>
-            <button class="botaotipo2" onclick="subirElemento()">cima</button>
-            <button class="botaotipo2" onclick="descerElemento()">baixo</button>
-            <button class="botaotipo3" onclick="apagarElementosCompletos()">limpar completos</button>
-            <button class="botaotipo4" onclick="apagarTodosElementos()">limpar lista</button>
-            <button class="botaotipo5" onclick="">salvar lista</button>
+            <button class="botaotipo1" onclick="apagarElementoSelecionado()">X</button>
+            <button class="botaotipo2" onclick="subirElemento()"></button>
+            <button class="botaotipo3" onclick="descerElemento()"></button>
+            <button class="botaotipo4" onclick="apagarElementosCompletos()">Limpar Completos</button>
+            <button class="botaotipo5" onclick="apagarTodosElementos()">Limpar Lista</button>
+            <button class="botaotipo6" onclick="salvarLista()">Salvar Lista</button>
         </div>
 
     </main>
