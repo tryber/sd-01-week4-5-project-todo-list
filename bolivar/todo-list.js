@@ -58,3 +58,12 @@ function markclick(item){
         }
     })
 }
+
+function clean(){
+
+    for (i = 0; i < document.getElementById("main-list").childElementCount; i++){
+        var remove = document.getElementById("main-list").childNodes[i]
+        document.getElementById("main-list").removeChild(remove)
+        i = -1;
+    }
+}

@@ -6,6 +6,6 @@
 .marked-item{
     text-decoration: line-through;
 }
-#button{
+.button{
     cursor: move;
 }
