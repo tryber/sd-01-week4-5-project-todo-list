@@ -2,11 +2,8 @@
 function textCap() {
     let addTaskbtn = document.querySelector(".addTask");
     addTaskbtn.addEventListener("click", function () {
-        let readyTask = document.querySelector(".taskText").value
-        return readyTask;
-
-    }
-    )
+    liInsert()
+    })
 }
 
 function orderedList() {
@@ -18,16 +15,11 @@ function orderedList() {
 
 function liInsert() {
     let genLiValue = document.createElement("li");
+    let readyTask = document.querySelector(".taskText").value
+    let capOl = document.getElementsByTagName("ol")[0]
+    capOl.appendChild(genLiValue)
+    genLiValue.textContent = readyTask
 }
-
 
 textCap()
 orderedList()
-
-
-//         for (let line = 0; line < valorRecebido; line++) {
-//             let linha = document.createElement("tr");
-//             let tabelaChamar = document.getElementsByClassName("tbljs")[0];
-//             tabelaChamar.appendChild(linha);
-//                 for (let cell = 0; cell < valorRecebido; cell++) {
-//                     let celula = document.createElement("td");
