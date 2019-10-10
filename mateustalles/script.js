@@ -35,15 +35,20 @@ function selectionCompletion(orderedList) {
         orderedList.lastChild.addEventListener("click", function() {
                 let itemClassName = this.className;
                 if( itemClassName=="list-item" ) {
-                    let itemAtivo = document.querySelector("[class$='active']")
-                    itemAtivo.className="list-item"
+                    if(!!document.querySelector("[class$='active']")) {
+                        let itemAtivo = document.querySelector("[class$='active']")
+                        itemAtivo.className="list-item"
+                    }
                     this.className+=" active";
                 } else if ( itemClassName=="list-item active" ) {
                     this.className="list-item active complete";
                 }
                 else if ( itemClassName=="list-item active complete" ) {
                     clickCount++
-                    this.className="list-item active complete italic";
+                    this.className="list-item active complete selected";
+                }
+                else if ( itemClassName=="list-item active complete selected" ) {
+                    clickCount++
                     if (clickCount==2) {
                         this.className="list-item"
                         clickCount=0;
