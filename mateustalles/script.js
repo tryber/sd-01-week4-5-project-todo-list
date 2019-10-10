@@ -9,35 +9,33 @@ function createItem(){
         orderedList.appendChild(newListItem);
         inputText.value="";
         inputText.focus();
-        selectionCompletion();
+        selectionCompletion(orderedList);
     });
 }
 createItem();
 
-function selectionCompletion() {
-    let listItems = document.querySelectorAll(".list-item");
+function selectionCompletion(orderedList) {
+    listItems = document.querySelectorAll(".list-item");
     let clickCount = 0;
-    for (item of listItems) {
-        item.addEventListener("click", function() {
-            let itemClassName = this.className;
-            if( !itemClassName.includes("active") ) {
-                this.className+=" active";
-            } else {
-                this.className+=" complete";
-            }
-            if ( itemClassName.includes("complete") ) {
-                clickCount++
-                if (clickCount==2) {
-                    this.className="list-item"
+        orderedList.lastChild.addEventListener("click", function() {
+                let itemClassName = this.className;
+                if( itemClassName=="list-item" ) {
+                    this.className+=" active";
+                } else if ( itemClassName=="list-item active" ) {
+                    this.className="list-item active complete";
                 }
-                let clickTimeout = setTimeout(function(){ 
-                    clickCount = 0; 
-                    console.log(clickCount) 
-                    clearTimeout(clickTimeout)
-                }, 2000);
+                else if ( itemClassName=="list-item active complete" ) {
+                    clickCount++
+                    if (clickCount==2) {
+                        this.className="list-item"
+                        clickCount=0;
+                    }
+                    let clickTimeout = setTimeout(function(){ 
+                        clickCount = 0; 
+                        clearTimeout(clickTimeout)
+                    }, 1000);
             }
         });
-    }
 }
 
 function btnRemove() {
@@ -49,6 +47,12 @@ function btnRemove() {
         newList.className="ordered-list";
         orderedList.remove();
         listContainer.appendChild(newList);        
+    });
+
+    let btnRemoveComplete = document.getElementById("btn-remove-complete");
+    btnRemoveComplete.addEventListener("click", function() {
+        let completeTasks = document.querySelectorAll("[class$='complete']");
+        completeTasks.remove()
     });
 }
 btnRemove();
