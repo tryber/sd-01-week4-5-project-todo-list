@@ -136,11 +136,13 @@ function removeSelected(){
     let btnEraseSelected = document.getElementById("btn-erase-selected");
     btnEraseSelected.addEventListener("click", function() {
         let listItems = document.querySelectorAll(".list-item");
-        let item = document.querySelector("[class$='active']");
-        var itemIndex = Array.prototype.indexOf.call(listItems, item);
+        let itemSelecionado = document.querySelector("[class$='active']");
+       // let itemCompletoSelecionado = document.querySelector("[class$='selected']");
+        var itemIndex = Array.prototype.indexOf.call(listItems, itemSelecionado);
         localStorage.removeItem(itemIndex);
         localStorage.removeItem(itemIndex+".className");
-        item.remove();
+        itemSelecionado.remove();
+       // itemCompletoSelecionado.remove();
     });
 }
 removeSelected();
