@@ -37,7 +37,6 @@ function selectionCompletion(orderedList) {
                 if( itemClassName=="list-item" ) {
                     for (node of orderedList.childNodes) {
                         if (node.className!=="list-item active complete"){
-                            console.log(node)
                             node.className="list-item"
                         }
                     }
@@ -96,10 +95,36 @@ function btnSave() {
         })
     }
 btnSave()
+
 function btnEraseMemory() {
     let btnEraseMemory = document.getElementById("btn-erase-memory");
     btnEraseMemory.addEventListener("click", function(){
-        localStorage.clear()
+    localStorage.clear()
     });
 }
 btnEraseMemory();
+
+function moveUp() {
+    let btnMoveUp = document.getElementById("btn-moveup");
+    btnMoveUp.addEventListener("click", function() {
+        let itemMove = document.querySelector("[class$='active']");
+        itemMove.parentNode.insertBefore(itemMove, itemMove.previousSibling);
+    })
+}
+function moveDown() {
+    let btnMoveUp = document.getElementById("btn-movedown");
+    btnMoveUp.addEventListener("click", function() {
+        let itemMove = document.querySelector("[class$='active']");
+        if (!(!!itemMove.nextSibling)){
+            let listItems = document.querySelectorAll(".list-item");
+            itemMove.parentNode.insertBefore(itemMove, listItems[0]);
+        }else{
+            itemMove.parentNode.insertBefore(itemMove, itemMove.nextSibling.nextSibling);
+        }
+    })
+}
+function moveSelectedListItem(){
+    moveUp();
+    moveDown();
+}
+moveSelectedListItem();
