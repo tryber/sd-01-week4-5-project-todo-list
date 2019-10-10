@@ -1,0 +1,58 @@
+body{
+    background-color: #5B44F2;
+}
+#base{
+    background-color: #D5D7F2;
+    width: 1500px;
+    height: 1200px;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    border-radius: 10px;
+}
+h1{
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+    flex-direction: row;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
+p{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 30px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+#inputText{
+    text-align: center;
+}
+#inputTask{
+    background-color: fade(#7D6BF2, 40%);
+    width: 800px;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+#btn{
+    background-color: #5B44F2;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    padding-left: 10px; 
+    margin-left: 10px;
+    cursor: pointer;
+}
+#task{
+    color: #5B44F2;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin-top: 2%;
+    left: 10px;
+    margin-left: 20%;
+}
