@@ -12,4 +12,4 @@ Pode-se excluir todas as tarefas da lista ou excluir apenas as completas, por me
 Há também a opção de mudar a tarefa de posição, apertando o botão com seta para cima após selecioná-la, ou para baixo, pressionando o botão com seta para baixo também após selecioná-la.
 O botão 'Salvar lista' usa o localStorage para guardar as informações da lista. Após as alterações, caso o usuário deseje salvar os dados para usá-los depois, deve clicar em 'Salvar lista'.
 
-Para executar o projeto e analisar seu resultado, basta acessar: https://antoniopaolillo.github.io/projetos/projeto5js/antoniopaolillo/index.html
+Para executar o projeto e analisar seu resultado, basta acessar: https://antoniopaolillo.github.io/projetos/projeto5js/antoniopaolillo
