@@ -94,6 +94,7 @@ function salvarLista() {
 }
 
 function mostrarListaSalva() {
+    //localStorage.length dividido por 2 pois há 2 valores guardados, e eles são percorridos pela chave
     let tamanhoLocalStorage = localStorage.length / 2;
     let criarLi;
     for (let i = 0; i < tamanhoLocalStorage; i++) {
