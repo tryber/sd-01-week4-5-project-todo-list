@@ -1,9 +1,9 @@
 function recoverLocalStorage() {
     window.addEventListener("load", function(){
         let inputText = document.getElementById("input-text");
-        for (let i = 0; i < localStorage.length ; i++) {    
+        for (let i = 0; i < localStorage.length/2 ; i++) {    
             let newListItem = document.createElement("li")
-            newListItem.className="list-item"
+            newListItem.className=localStorage.getItem(i+".className")
             newListItem.innerHTML=localStorage.getItem(i);
             let orderedList = document.querySelector(".ordered-list")
             orderedList.appendChild(newListItem);
@@ -89,6 +89,8 @@ function btnSave() {
                 for (item of listItems) {
                     var itemIndex = Array.prototype.indexOf.call(listItems, item);
                     localStorage.setItem(itemIndex, item.innerHTML);
+                    localStorage.setItem(itemIndex+".className", item.className);
+
                 }
             }
         })
