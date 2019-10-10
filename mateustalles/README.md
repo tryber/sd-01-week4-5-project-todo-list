@@ -9,14 +9,17 @@ interações em Javascript.
 Neste projeto também fiz todos os bônus, tentando sempre 
 colocar features adicionais, por exemplo:
 
->>O armazenamento local também armazena as classes dos items
+- O armazenamento local também armazena as classes dos items
 da lista, isto é, se estão selecionados ou se estão marcados
 como completos.
->>Botão que remove todo o armazenamento local.
->>Os items podem ser movidos até o limite da lista que são
+
+-Botão que remove todo o armazenamento local.
+
+-Os items podem ser movidos até o limite da lista que são
 automaticamente transferidos para o topo ou para base, a
 depender do caso.
->>Para desmarcar um item dado como completado, o usuário pre-
+
+-Para desmarcar um item dado como completado, o usuário pre-
 cisa realmente dar um duplo-clique dentro de 1 segundo, pois
 usei o recurso timeout para dar mais realismo à atividade.
 
