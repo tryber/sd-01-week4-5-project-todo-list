@@ -1,20 +1,22 @@
 var selected;
 
 function createItem() {
-    let userInput = document.getElementById("userInput").value
+    let userInput = document.getElementById("userInput")
     let orderedlist = document.getElementById("list")
 
     let listItem = document.createElement('li')
     orderedlist.appendChild(listItem);
 
     listItem.className = 'item';
-    listItem.textContent = userInput;
+    listItem.textContent = userInput.value;
     listItem.addEventListener("click", function() {
         selectItem(listItem)
     })
     listItem.addEventListener("dblclick", function() {
         completeItem(listItem)
     })
+
+    userInput.value = "";
 }
 
 function selectItem(listItem) {
