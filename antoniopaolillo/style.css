@@ -2,7 +2,6 @@ body{
     background-color: rgb(1, 160, 0);
 }
 .tarefa{
-    cursor:pointer;
     word-break: break-word;
 }
 #tarefaSelecionada{
@@ -86,4 +85,7 @@ body{
 }
 .btn:hover{
     filter: saturate(40%)
+}
+.btn{
+    cursor: pointer;
 }
