@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+}
+#centrar-elementos-na-pagina{
+    width: 100vw;
+    height: 100vh;
+    background: #6C7A89;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+#criar{
+    width: 500px;
+    height: 300px;
+    background:red;
+    border-radius: 20px;
+}
+.estilo-botoes{
+    border-radius: 100px;
+
+}
