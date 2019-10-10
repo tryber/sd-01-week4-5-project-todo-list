@@ -1,3 +1,19 @@
+function recoverLocalStorage() {
+    window.addEventListener("load", function(){
+        let inputText = document.getElementById("input-text");
+        for (let i = 0; i < localStorage.length ; i++) {    
+            let newListItem = document.createElement("li")
+            newListItem.className="list-item"
+            newListItem.innerHTML=localStorage.getItem(i);
+            let orderedList = document.querySelector(".ordered-list")
+            orderedList.appendChild(newListItem);
+            inputText.focus();
+            selectionCompletion(orderedList)
+        }
+    })
+}
+recoverLocalStorage();
+
 function createItem(){
     let inputSubmit = document.getElementById("input-submit");
     let inputText = document.getElementById("input-text");
@@ -15,11 +31,13 @@ function createItem(){
 createItem();
 
 function selectionCompletion(orderedList) {
-    listItems = document.querySelectorAll(".list-item");
     let clickCount = 0;
         orderedList.lastChild.addEventListener("click", function() {
                 let itemClassName = this.className;
                 if( itemClassName=="list-item" ) {
+                    for (node of orderedList.childNodes) {
+                        node.className="list-item"
+                    }
                     this.className+=" active";
                 } else if ( itemClassName=="list-item active" ) {
                     this.className="list-item active complete";
@@ -58,3 +76,18 @@ function btnRemove() {
     });
 }
 btnRemove();
+
+function btnSave() {
+    let btnSave = document.getElementById("btn-save");
+    btnSave.addEventListener("click", function(){
+            if( !!document.querySelectorAll(".list-item") )  {
+                let listItems = document.querySelectorAll(".list-item");
+                //let listItemsChildren = listItems.childNodes;
+                for (item of listItems) {
+                    var itemIndex = Array.prototype.indexOf.call(listItems, item);
+                    localStorage.setItem(itemIndex, item.innerHTML);
+                }
+            }
+        })
+    }
+btnSave()

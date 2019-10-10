@@ -1,8 +1,11 @@
 li {
     cursor: pointer;
 }
+li:hover {
+    background-color: #EDFFFA;
+}
 .active {
-    background-color: lightcyan;
+    background-color: #B7FFE3;
 }
 .complete {
     text-decoration: line-through;
