@@ -36,7 +36,10 @@ function selectionCompletion(orderedList) {
                 let itemClassName = this.className;
                 if( itemClassName=="list-item" ) {
                     for (node of orderedList.childNodes) {
-                        node.className="list-item"
+                        if (node.className!=="list-item active complete"){
+                            console.log(node)
+                            node.className="list-item"
+                        }
                     }
                     this.className+=" active";
                 } else if ( itemClassName=="list-item active" ) {
