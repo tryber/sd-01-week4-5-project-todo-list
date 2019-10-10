@@ -226,3 +226,31 @@ button:hover {
     background-image: linear-gradient(to bottom, #8c0000, #d40000);
     text-decoration: none;
 }
+
+#btnSave {
+    background: #730000;
+    background-image: -webkit-linear-gradient(top, #a0da02, #aae014);
+    background-image: -moz-linear-gradient(top, #a0da02, #aae014);
+    background-image: -ms-linear-gradient(top, #a0da02, #aae014);
+    background-image: -o-linear-gradient(top, #a0da02, #aae014);
+    background-image: linear-gradient(to bottom, #a0da02, #aae014);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    border-width: 0px;
+}
+
+#btnSave:hover {
+    background: #730000;
+    background-image: -webkit-linear-gradient(top, #97f104, #b4f150);
+    background-image: -moz-linear-gradient(top, #97f104, #b4f150);
+    background-image: -ms-linear-gradient(top, #97f104, #b4f150);
+    background-image: -o-linear-gradient(top, #97f104, #b4f150);
+    background-image: linear-gradient(to bottom, #97f104, #b4f150);
+    text-decoration: none;
+}
