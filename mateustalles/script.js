@@ -52,7 +52,9 @@ function btnRemove() {
     let btnRemoveComplete = document.getElementById("btn-remove-complete");
     btnRemoveComplete.addEventListener("click", function() {
         let completeTasks = document.querySelectorAll("[class$='complete']");
-        completeTasks.remove()
+        for (tasks of completeTasks) {
+            tasks.remove()
+        }
     });
 }
 btnRemove();
