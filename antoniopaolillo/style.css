@@ -3,6 +3,7 @@ body{
 }
 .tarefa{
     cursor:pointer;
+    word-break: break-word;
 }
 #tarefaSelecionada{
     background-color: grey;
@@ -82,4 +83,7 @@ body{
     margin-left: 5%;
     width: 25%;
     border-radius: 8px;
+}
+.btn:hover{
+    filter: saturate(40%)
 }

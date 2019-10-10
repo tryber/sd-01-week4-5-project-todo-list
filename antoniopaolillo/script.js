@@ -42,7 +42,6 @@ function apagarTodosElementos() {
         let elemento = document.getElementsByClassName('tarefa')[i];
         elementoPai.removeChild(elemento);
     }
-
 }
 
 function apagarElementosCompletos() {
@@ -55,7 +54,6 @@ function apagarElementosCompletos() {
             elementoPai.removeChild(elementoCompleto);
         }
     }
-
 }
 
 function apagarElementoSelecionado() {
@@ -80,7 +78,6 @@ function salvarLista() {
         lista[i] = document.getElementsByTagName('li')[i];
         localStorage.setItem('lista' + i, lista[i].innerHTML)
     }
-
 }
 
 function mostrarListaSalva() {
@@ -91,7 +88,6 @@ function mostrarListaSalva() {
         criarLi.setAttribute("class", "tarefa");
         criarLi.innerHTML = localStorage['lista' + i];
         elementoPai.appendChild(criarLi);
-
     }
 }
 
