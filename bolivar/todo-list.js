@@ -20,6 +20,7 @@ function selectclick(span){
     span.addEventListener("click", function(){
         count += 1;
         if ((count == 1) && (this.id !== "selected-item")){
+            reviewSelect()
             this.id = "selected-item"
         }
         else if ((count == 1) && (this.id == "selected-item")){
@@ -134,6 +135,26 @@ function removeSaved(){
         localStorage.removeItem(keyitem)
         localStorage.removeItem(keyclassName)
         localStorage.removeItem(keyid)
+    }
+}
+
+function moveItensUp(){
+    var list = document.getElementById("main-list");
+    for (i = 0; i < document.getElementById("main-list").childElementCount; i++){
+        if (document.getElementById("main-list").childNodes[i].firstChild.id == "selected-item"){
+            if (i == 0){
+                var item = document.createElement("li");
+                var span = document.createElement("span");
+                item.appendChild(span)
+                list.appendChild(item);
+                span.className = list.childNodes[i].firstChild.className;
+                span.innerHTML = document.getElementById("main-input").childNodes[i].firstChild.innerHTML
+                list.removeChild(document.getElementById("main-input").childNodes[i])
+            }
+            else {
+                list.insertBefore(list.childNodes[i], list.childNodes[i - 1]);
+            }
+        }
     }
 }
 
