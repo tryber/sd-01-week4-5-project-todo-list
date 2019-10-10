@@ -128,3 +128,16 @@ function moveSelectedListItem(){
     moveDown();
 }
 moveSelectedListItem();
+
+function removeSelected(){
+    let btnEraseSelected = document.getElementById("btn-erase-selected");
+    btnEraseSelected.addEventListener("click", function() {
+        let listItems = document.querySelectorAll(".list-item");
+        let item = document.querySelector("[class$='active']");
+        var itemIndex = Array.prototype.indexOf.call(listItems, item);
+        localStorage.removeItem(itemIndex);
+        localStorage.removeItem(itemIndex+".className");
+        item.remove();
+    });
+}
+removeSelected();
