@@ -39,6 +39,10 @@ body {
     color: darkred;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .btnAdd {
     background: #d10c1c;
     background-image: -webkit-linear-gradient(top, #bf0000, #bd0000);
