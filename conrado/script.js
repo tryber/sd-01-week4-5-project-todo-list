@@ -1,12 +1,16 @@
 window.onload = function () {
     let btn = document.getElementById("btn")
     btn.addEventListener("click", function () {
-        createElement(showTask());
+        addLiShowTask();
     })
-    function showTask() {
-        inputTask = document.getElementById('inputTask').value;
+
+    function addLiShowTask(){
+        let li = createElement();
         let showTask = document.getElementById('task');
-        showTask.innerHTML = inputTask;
+        showTask.appendChild(li);
+        let inputTask = document.getElementById('inputTask');
+        li.innerHTML = inputTask.value;
+        inputTask.value = "";
     }
     function createElement(){
         let createDiv = document.createElement('li');
