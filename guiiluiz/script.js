@@ -54,3 +54,7 @@ function deleteAll() {
         orderedlist.firstChild.remove();
     }
 }
+
+function deleteSelected() {
+    selected.remove()
+}
