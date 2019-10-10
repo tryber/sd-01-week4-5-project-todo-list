@@ -1,0 +1,18 @@
+body {
+    background-color: #3EEC3E;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#conteudo-da-lista {
+    width: 500px;
+    height: auto;
+    padding: 150px;
+    background-color: white;
+    border-radius: 40px;  
+}
+
+#titulo-principal {
+
+}
