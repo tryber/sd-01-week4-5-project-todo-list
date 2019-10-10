@@ -96,3 +96,10 @@ function btnSave() {
         })
     }
 btnSave()
+function btnEraseMemory() {
+    let btnEraseMemory = document.getElementById("btn-erase-memory");
+    btnEraseMemory.addEventListener("click", function(){
+        localStorage.clear()
+    });
+}
+btnEraseMemory();
