@@ -13,18 +13,20 @@
 <body>
     <div class="container">
             <h1 class="title">Lista de Tarefas</h1>
-            <span class="subtitle">Clique duas vezes em um item para marcá-lo como completo</span>
-        <div class="content">
+            <h4 class="subtitle">Clique duas vezes em um item para marcá-lo como completo</h4>
+        <div class="content" id="addItem">
             <input type="text" id="userInput">
-            <button type="button" class="btnAdd" onclick="createItem()">Adicionar</button>
+            <button type="button" id="btnAdd" onclick="createItem()">Adicionar</button>
         </div>
         <div class="content">
             <ol id="list"></ol>
         </div>
-        <div class="content" id="buttons">
-            <button type="button" class="btnX">X</button>
-            <button type="button" class="btnUp">⇧</button>
-            <button type="button" class="btnDown">⇩</button>
+        <div class="content">
+            <button type="button" class="buttons" id="btnX" onclick="deleteSelected()">X</button>
+            <button type="button" class="buttons" id="btnUp">⇧</button>
+            <button type="button" class="buttons" id="btnDown">⇩</button>
+            <button type="button" class="buttons" id="btnCleanCompleted" onclick="deleteCompleted()">Limpar Completos</button>
+            <button type="button" class="buttons" id="btnReset" onclick="deleteAll()">Limpar Lista</button>
         </div>
     </div>
 </body>

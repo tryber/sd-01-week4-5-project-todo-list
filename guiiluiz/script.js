@@ -8,15 +8,14 @@ function createItem() {
     orderedlist.appendChild(listItem);
 
     listItem.className = 'item';
-    listItem.textContent = userInput
+    listItem.textContent = userInput;
     listItem.addEventListener("click", function() {
         selectItem(listItem)
     })
     listItem.addEventListener("dblclick", function() {
-        crossOutItem(listItem)
+        completeItem(listItem)
     })
 }
-
 
 function selectItem(listItem) {
     let allItems = document.getElementsByClassName("item")
@@ -27,7 +26,7 @@ function selectItem(listItem) {
     selected = listItem;
 }
 
-function crossOutItem(listItem) {
+function completeItem(listItem) {
     if(listItem.style.textDecoration){
         listItem.style.textDecoration = "";
         listItem.style.color = "";
