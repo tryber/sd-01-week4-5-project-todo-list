@@ -27,6 +27,15 @@ body {
     margin-top: 100px;
 }
 
-.tarefa-completada{
+#selecionado{
+    background-color: lightgrey;
+}
+
+
+.tarefa-completada {
     color: red;
+}
+
+button {
+    cursor: pointer;
 }

@@ -6,12 +6,11 @@ window.onload = function() {
         btn = document.querySelector('#botao-adicionar-tarefa')
         btn.addEventListener('click', function() {
             
-            adicionarTarefa()            
-            adicionarFuncaoAoClicarDuasVezes()
+            adicionarTarefa()           
             
         })
     }
-
+    
     function pegarElemento(elemento) {
         return document.querySelector(elemento)
     }
@@ -23,14 +22,15 @@ window.onload = function() {
     function adicionarElemento(elementoPai, elementoFilho) {
         return elementoPai.appendChild(elementoFilho)
     }
-
+    
     function inserirInputComEnter() {
-       let input = pegarElemento('#entrada-tarefa')
-       input.addEventListener('keyup', function(e){
-           if (e.which == 13) {
-               adicionarTarefa()
-           }
-       })
+        let input = pegarElemento('#entrada-tarefa')
+        input.addEventListener('keyup', function(e){
+            if (e.which == 13) {
+                
+                adicionarTarefa()             
+            }
+        })
     }
     
     function criandoListaOl() {      
@@ -43,27 +43,46 @@ window.onload = function() {
     }    
     
     function adicionarTarefa() {        
-        let i = 0, ol, li, inputTarefa       
+        let ol, li, inputTarefa       
         
         ol = pegarElemento('.lista-ordenada')
         inputTarefa = pegarElemento('#entrada-tarefa').value             
         li = criarElemento('li')                
         adicionarElemento(ol,li)   
         li.textContent = inputTarefa
-        li.classList.add('lista-de-tarefas')                
+    
+        selecionarTarefa(li)        
+    }
+    
+    function selecionarTarefa(itemAdicionado) {
+        itemAdicionado.addEventListener('click', function(){
+            liId = document.getElementById('selecionado')            
+            
+            if (liId) {
+                removerId(liId)
+            } 
+            colocarId(itemAdicionado)            
+        })        
+    } 
+
+    function colocarId(itemId) {
+        itemId.setAttribute("id", "selecionado")
     }
 
-    function adicionarFuncaoAoClicarDuasVezes() {
+    function removerId(itemId) {
+        itemId.setAttribute("id", "")
+    }    
+    
+    /*  function adicionarFuncaoAoClicarDuasVezes() {
         let liClasse, i
-        liClasse = document.querySelectorAll('.lista-de-tarefas')
-        console.log(liClasse)
+        liClasse = document.getElementsByTagName('li')
+        
         for( i = 0; i < liClasse.length; i++){
-            liClasse[i].addEventListener('click', function(){
-                liClasse[i].classList.add('tarefa-completada')
+            liClasse[i].addEventListener('click', function() {
+                liClasse[i - 1].classList.add('selecionar-tarefa')
             })
         } 
-    }
-
+    } */
     
     criandoListaOl()
     ativarBotao()
