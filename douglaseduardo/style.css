@@ -8,14 +8,14 @@ body {
     justify-content: center;
     }
 
-    .principal {
+.principal {
     width: 80vw;
     background-image: url("https://st2.depositphotos.com/1744844/6684/i/950/depositphotos_66846965-stock-photo-abstract-multicolor.jpg");
     border-radius: 50px;
     padding: 35px;
     }
 
-    button {
+button {
     cursor: pointer;
     border-top: 1px solid #f797b2;
     background: #a1d665;
@@ -39,18 +39,18 @@ body {
     vertical-align: middle;
     }
 
-    button:hover {
+button:hover {
     border-top-color: #786d28;
     background: #786d28;
     color: #cccccc;
     }
 
-    button:active {
+button:active {
     border-top-color: #391b5c;
     background: #391b5c;
     }
 
-    input {
+input {
     top: 51px;
     height: 29px;
     background:rgba(45, 45, 45, 0.52);
@@ -64,12 +64,12 @@ body {
     text-shadow: 0 1px 2px rgba(0,0,0,.1);
     }
 
-    input:focus{
+input:focus{
     border-color: rgb(39, 136, 0);
     border-block-start-color: aqua;
     border: 2px solid;
     }
 
-    #selecionado{
+#selecionado{
         background-color: aqua;
     }
