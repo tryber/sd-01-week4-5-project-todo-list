@@ -26,3 +26,7 @@ body {
 #lista-de-botoes {
     margin-top: 100px;
 }
+
+.tarefa-completada{
+    color: red;
+}

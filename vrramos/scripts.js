@@ -6,7 +6,8 @@ window.onload = function() {
         btn = document.querySelector('#botao-adicionar-tarefa')
         btn.addEventListener('click', function() {
             
-            adicionarTarefa()
+            adicionarTarefa()            
+            adicionarFuncaoAoClicarDuasVezes()
             
         })
     }
@@ -23,10 +24,10 @@ window.onload = function() {
         return elementoPai.appendChild(elementoFilho)
     }
 
-    function inserirComEnter() {
+    function inserirInputComEnter() {
        let input = pegarElemento('#entrada-tarefa')
        input.addEventListener('keyup', function(e){
-           if (e.KeyCode == 13) {
+           if (e.which == 13) {
                adicionarTarefa()
            }
        })
@@ -42,16 +43,29 @@ window.onload = function() {
     }    
     
     function adicionarTarefa() {        
-        let ol, li, inputTarefa       
+        let i = 0, ol, li, inputTarefa       
         
         ol = pegarElemento('.lista-ordenada')
-        inputTarefa = pegarElemento('#entrada-tarefa').value        
+        inputTarefa = pegarElemento('#entrada-tarefa').value             
         li = criarElemento('li')                
-        adicionarElemento(ol,li)        
-        li.textContent = inputTarefa        
+        adicionarElemento(ol,li)   
+        li.textContent = inputTarefa
+        li.classList.add('lista-de-tarefas')                
     }
+
+    function adicionarFuncaoAoClicarDuasVezes() {
+        let liClasse, i
+        liClasse = document.querySelectorAll('.lista-de-tarefas')
+        console.log(liClasse)
+        for( i = 0; i < liClasse.length; i++){
+            liClasse[i].addEventListener('click', function(){
+                liClasse[i].classList.add('tarefa-completada')
+            })
+        } 
+    }
+
     
     criandoListaOl()
     ativarBotao()
-    inserirComEnter()
+    inserirInputComEnter()
 }
