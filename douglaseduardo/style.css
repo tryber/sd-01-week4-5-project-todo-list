@@ -10,7 +10,7 @@ body {
 
 .principal {
     width: 80vw;
-    background-image: url("https://st2.depositphotos.com/1744844/6684/i/950/depositphotos_66846965-stock-photo-abstract-multicolor.jpg");
+    background-color: rgb(194, 194, 194);
     border-radius: 50px;
     padding: 35px;
     }
