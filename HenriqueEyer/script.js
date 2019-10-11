@@ -1,22 +1,22 @@
 reloadList();
 addClickBtnInput(returnById('btn_input'));
-addClickBtnExcluir(returnById('btn_excluir_ALL'))
-addClickBtnExcluirItem(returnById('btn_excluir_item'))
-addClickBtnExcluirCompletos(returnById('btn_excluir_completos'))
-addClickBtnSave(returnById('btn_salvar'))
-addClickBtnDown(returnById('btn_down'))
-addClickBtnUP(returnById('btn_up'))
+addClickBtnExcluir(returnById('btn_excluir_ALL'));
+addClickBtnExcluirItem(returnById('btn_excluir_item'));
+addClickBtnExcluirCompletos(returnById('btn_excluir_completos'));
+addClickBtnSave(returnById('btn_salvar'));
+addClickBtnDown(returnById('btn_down'));
+addClickBtnUP(returnById('btn_up'));
 
 
 function addClickBtnUP(element){
     element.addEventListener('click',function(){
-        moveUp(returnById('select'))
+        moveUp(returnById('select'));
     })
 }
 
 function addClickBtnDown(element){
     element.addEventListener('click',function(){
-        moveDown(returnById('select'))
+        moveDown(returnById('select'));
     })
 }
 
@@ -44,21 +44,29 @@ function moveDown(element){
 
 function saveList(){
     localStorage.clear();
-    let list = returnByTagName('li') 
+    let list = returnByTagName('li') ;
     let i;
     for (i=0;i<list.length;i++){
         if(list[i].textContent!=""){
             localStorage.setItem('list'+i,list[i].textContent);
+        }
+        if (list[i].className=="completed") {
+            localStorage.setItem('completed' + i, 1);
+        } else {
+            localStorage.setItem('completed' + i, 0);
         }
     }
 }
 
 function reloadList(){
     let i;
-    for(i=0;i<localStorage.length;i++){
+    for(i=0;i<localStorage.length/2;i++){
         let text=localStorage["list"+i];
-        let elementFather =returnById('ol_list')
-        let task=addTextTask(createLI(),text)
+        let elementFather =returnById('ol_list');
+        let task=addTextTask(createLI(),text);
+        if (localStorage['completed' + i] == "1") {
+            markCompleted(task);
+        }
         addElementInHTML(task,elementFather);
     }
 }
@@ -86,7 +94,7 @@ function addClickBtnExcluir(btn){
 function addClickBtnExcluirItem(btn){
     btn.addEventListener('click', function(){
         if(returnById('select')){
-            deleteElement(returnById('select'))
+            deleteElement(returnById('select'));
         }
     })
 }
@@ -128,13 +136,13 @@ function deleteElement(element){
 
 function addClickMarkCompleted(element){
     element.addEventListener('dblclick', function(){
-        markCompleted(this)
+        markCompleted(this);
     })
 }
 
 function markCompleted(element){
     if(element.className!="completed"){
-        element.className="completed"
+        element.className="completed";
     }else{
         element.className="";
     }
@@ -163,7 +171,7 @@ function addClickBtnInput(element){
     element.addEventListener('click',function(){
         if(returnById('input_txt').value){
             
-            let elementFather =returnById('ol_list')
+            let elementFather =returnById('ol_list');
             let textInput=returnById('input_txt').value;
             let taskLi=addTextTask(createLI(),textInput)
             addElementInHTML(taskLi,elementFather);
@@ -193,13 +201,3 @@ function returnById(id){
     return element;
 }
 
-
-// Antonio Paolillo 6:32 PM
-// if (lista[i].style.textDecoration) {
-//            localStorage.setItem('completo' + i, 1)
-//        } else {
-//            localStorage.setItem('completo' + i, 0)
-//        }
-// if (localStorage['completo' + cont] == "1") {
-//            criarLi.style.textDecoration = "line-through";
-//        }
