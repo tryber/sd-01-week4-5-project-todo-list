@@ -7,23 +7,19 @@
     text-decoration:line-through;
     color:#808080;
 }
+body{
+    margin:0;
+}
 
-/* 
-font-family: 'Mansalva', cursive;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Shadows Into Light', cursive;
-font-family: 'Righteous', cursive;
-font-family: 'Permanent Marker', cursive
-*/
 .btn{
     cursor:pointer;
 } 
+
 li{
     cursor:pointer;
 }
 button:hover{
-    filter: contrast(250%);
-    
+    filter: saturate(40%);
 }
 
 main{
@@ -118,4 +114,7 @@ h1 img{
 
 .instructions{
     font-size:20px;
+}
+body{
+    background-color: #000000;
 }
