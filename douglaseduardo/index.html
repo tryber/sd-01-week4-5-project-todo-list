@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,15 @@
     <title>to do list</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="principal">
         <h2>Minha lista de tarefa</h2>
-        <span>Clique duas vezes num item para marca-lo com completo</span><br>
-        Adcione aqui→<input type="text" name="item" id="caixaTexto">
+        <span>Clique duas vezes num item para marca-lo com completo</span><br> Adcione aqui→<input type="text" name="item" id="caixaTexto">
         <button onclick="minhaFunction()">Adcionar</button>
-        
+
         <ol id="lista"></ol>
-        <button onclick="apagar(selecionado)">X</button> 
+        <button onclick="apagar(selecionado)">X</button>
         <button onclick="irParaCima()">⇈</button>
         <button onclick="irParaBaixo()">⇊</button>
         <button onclick="limparCompleto()">Limpar Completo</button>
@@ -24,4 +25,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
