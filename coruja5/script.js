@@ -1,7 +1,7 @@
 //criar tag ol e li para fazer uma listagem de elementos
 //função click terá que ativar este elemento
 //tenho que fazer um createElement para criar sempre um li
-
+//tachado text-decoration:line-through
 let tag = document.getElementsByTagName("ol")[0];
 let textoInput = document.getElementById("adicionar-tarefa");
 let gerarLista = document.getElementsByClassName("estilo-botoes")[0];

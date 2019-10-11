@@ -1,6 +1,7 @@
-body{
+.centralizar-estrutura{
     text-align: center;
 }
+
 #centrar-elementos-na-pagina{
     width: 100vw;
     height: 100vh;
@@ -10,13 +11,18 @@ body{
     justify-content: center;
     align-items: center
 }
-#criar{
+#container{
     width: 500px;
     height: auto;
     background:rgb(152, 236, 177);
     border-radius: 20px;
+    
 }
 .estilo-botoes{
     border-radius: 100px;
     cursor: pointer;
+}
+
+.lista-de-tarefas{
+    text-decoration: line-through;
 }
