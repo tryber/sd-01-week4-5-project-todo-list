@@ -18,6 +18,10 @@ body{
 li{
     cursor:pointer;
 }
+li:hover{
+    background: silver;
+}
+
 button:hover{
     filter: saturate(40%);
 }
