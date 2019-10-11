@@ -94,6 +94,7 @@ function showSavedList() {
 
         if (localStorage['completed' + i] == "1") {
             listItem.style.textDecoration = "line-through";
+            listItem.style.color = "lightslategray";
         }
     }
 }
