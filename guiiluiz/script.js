@@ -20,7 +20,7 @@ function createItem() {
 }
 
 function selectItem(listItem) {
-    let allItems = document.getElementsByClassName("item")
+    const allItems = document.getElementsByClassName("item")
     for (let index = 0; index < allItems.length; index++) {
         allItems[index].style.background = "";
     }
@@ -39,7 +39,7 @@ function completeItem(listItem) {
 }
 
 function deleteCompleted() {
-    let listItems = document.getElementsByClassName("item");
+    const listItems = document.getElementsByClassName("item");
     for (let index = 0; index < listItems.length; index++) {
         if (listItems[index].style.textDecoration) {
             listItems[index].remove();
@@ -49,7 +49,7 @@ function deleteCompleted() {
 }
 
 function deleteAll() {
-    const orderedlist = document.getElementById("list");// Estou repetindo essa variavel em todas as funções porque quando tentei declará-la fora não funcionou.
+    const orderedlist = document.getElementById("list");
     while (orderedlist.firstChild) {
         orderedlist.firstChild.remove();
     }
@@ -61,7 +61,7 @@ function deleteSelected() {
 
 function saveList() {
     localStorage.clear();
-    let allItems = document.getElementsByClassName("item");
+    const allItems = document.getElementsByClassName("item");
     let list = [];
     for (let i = 0; i < allItems.length; i++) {
         list[i] = document.getElementsByTagName('li')[i];
@@ -76,8 +76,8 @@ function saveList() {
 }
 
 function showSavedList() {
-    let localStorageSize = localStorage.length / 2;
-    const orderedlist = document.getElementById("list"); // Estou repetindo essa variavel em todas as funções porque quando tentei declará-la fora não funcionou.
+    const localStorageSize = localStorage.length / 2;
+    const orderedlist = document.getElementById("list");
 
     for (let i = 0; i < localStorageSize; i++) {
         let listItem = document.createElement('li')
