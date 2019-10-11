@@ -46,7 +46,6 @@ function saveList(){
     localStorage.clear();
     let list = returnByTagName('li') 
     let i;
-    let text;
     for (i=0;i<list.length;i++){
         if(list[i].textContent!=""){
             localStorage.setItem('list'+i,list[i].textContent);
@@ -193,3 +192,14 @@ function returnById(id){
     let element = document.getElementById(id);
     return element;
 }
+
+
+// Antonio Paolillo 6:32 PM
+// if (lista[i].style.textDecoration) {
+//            localStorage.setItem('completo' + i, 1)
+//        } else {
+//            localStorage.setItem('completo' + i, 0)
+//        }
+// if (localStorage['completo' + cont] == "1") {
+//            criarLi.style.textDecoration = "line-through";
+//        }
