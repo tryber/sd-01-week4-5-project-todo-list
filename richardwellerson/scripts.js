@@ -10,7 +10,6 @@ function orderedList() {
     let genOrdList = document.createElement("ol");
     let divAdd = document.querySelector(".receiveOl");
     divAdd.appendChild(genOrdList)
-
 }
 
 function liInsert() {
