@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Tarefas</title>
+</head>
+
+<body>
+    <div class="container">
+            <h1 class="title">Lista de Tarefas</h1>
+            <h4 class="subtitle">Clique duas vezes em um item para marcá-lo como completo</h4>
+        <div class="content" id="addItem">
+            <input type="text" id="taskInput">
+            <button type="button" id="btnAdd" onclick="createItem()">Adicionar</button>
+        </div>
+        <div class="content">
+            <ol id="list"></ol>
+        </div>
+        <div class="content">
+            <button type="button" class="buttons" id="btnX" onclick="deleteSelected()">X</button>
+            <button type="button" class="buttons" id="btnUp">⇧</button>
+            <button type="button" class="buttons" id="btnDown">⇩</button>
+            <button type="button" class="buttons" id="btnCleanCompleted" onclick="deleteCompleted()">Limpar Completos</button>
+            <button type="button" class="buttons" id="btnReset" onclick="deleteAll()">Limpar Lista</button>
+            <button type="button" class="buttons" id="btnSave" onclick="saveList()">Salvar Lista</button>
+        </div>
+    </div>
+</body>
+
+</html>
