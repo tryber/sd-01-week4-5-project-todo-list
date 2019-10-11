@@ -1,32 +1,32 @@
 
-*{
-    box-sizing: border-box
+* {
+    box-sizing: border-box;
 }
 
-.completed{
+.completed {
     text-decoration:line-through;
     color:#808080;
 }
-body{
+body {
     margin:0;
 }
 
-.btn{
+.btn {
     cursor:pointer;
 } 
 
-li{
+li {
     cursor:pointer;
 }
-li:hover{
+li:hover {
     background: silver;
 }
 
-button:hover{
+button:hover {
     filter: saturate(40%);
 }
 
-main{
+main {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -36,21 +36,22 @@ main{
     padding:150px;
 }
 
-.sub-div{
+.sub-div {
     padding: 20px;
 }
 
 
-.container{
+.container {
     background: white;
     font-family: 'Righteous', cursive;
     border:1px #000000 solid;
-    width: 50%;
+  
+    min-width:800px;
     display: flex;
     flex-direction: column;
 }
 
-.header{
+.header {
     display: flex;
     flex-direction:column;
     width: auto;
@@ -60,7 +61,7 @@ main{
     align-items: center;
 }
 
-.btn{
+.btn {
     border: 0px;
     padding: 10px 20px;
     margin: 5px;
@@ -69,56 +70,56 @@ main{
     font-family: 'Righteous', cursive;
 }
 
-.btn img{
+.btn img {
     height: 13px;
 }
 
-.blue{
+.blue {
     background: darkblue;
 }
 
-.red{
+.red {
     background:darkred;
 }
 
-.green{
+.green {
     background: green;
 }
 
-.orange{
+.orange {
     background: orange;
 }
 
 
-li{
+li {
     border-bottom: 1px silver solid;
     font-size: 20px;
     word-break: break-all;
     height: 30px;
 }
 
-#input-txt{
+#input-txt {
     font-size: 20px;
 }
 
-.input{
+.input {
     display: flex;
     flex-direction:column;
 }
-h1{
+h1 {
     display: flex;
     align-items: center;
     font-size:40px;
 }
 
-h1 img{
+h1 img {
     height:40px;
     margin-left: 10px;
 }
 
-.instructions{
+.instructions {
     font-size:20px;
 }
-body{
+body {
     background-color: #000000;
 }
