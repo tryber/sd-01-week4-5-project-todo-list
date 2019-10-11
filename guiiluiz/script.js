@@ -63,14 +63,14 @@ function saveList() {
     localStorage.clear();
     const allItems = document.getElementsByClassName("item");
     let list = [];
-    for (let i = 0; i < allItems.length; i++) {
-        list[i] = document.getElementsByTagName('li')[i];
-        localStorage.setItem('list' + i, list[i].innerHTML)
+    for (let index = 0; index < allItems.length; index++) {
+        list[index] = document.getElementsByTagName('li')[index];
+        localStorage.setItem('list' + index, list[index].innerHTML)
 
-        if (list[i].style.textDecoration) {
-            localStorage.setItem('completed' + i, 1)
+        if (list[index].style.textDecoration) {
+            localStorage.setItem('completed' + index, 1)
         } else {
-            localStorage.setItem('completed' + i, 0)
+            localStorage.setItem('completed' + index, 0)
         }
     }
 }
@@ -79,11 +79,11 @@ function showSavedList() {
     const localStorageSize = localStorage.length / 2;
     const orderedlist = document.getElementById("list");
 
-    for (let i = 0; i < localStorageSize; i++) {
+    for (let index = 0; index < localStorageSize; index++) {
         let listItem = document.createElement('li')
         orderedlist.appendChild(listItem);
         listItem.className = 'item';
-        listItem.textContent = localStorage['list' + i];
+        listItem.textContent = localStorage['list' + index];
         
         listItem.addEventListener("click", function () {
             selectItem(listItem)
@@ -92,7 +92,7 @@ function showSavedList() {
             completeItem(listItem)
         })
 
-        if (localStorage['completed' + i] == "1") {
+        if (localStorage['completed' + index] == "1") {
             listItem.style.textDecoration = "line-through";
             listItem.style.color = "lightslategray";
         }
