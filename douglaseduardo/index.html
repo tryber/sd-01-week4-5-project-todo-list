@@ -7,7 +7,8 @@
     <title>to do list</title>
         <style>
         body {
-        background: rgb(0, 0, 0);
+        background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/background-a%C3%A7o-escovado-azul-8.jpg");
+        font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -17,12 +18,13 @@
 
         .principal {
         width: 80vw;
-        background-color: white;
+        background-image: url("https://st2.depositphotos.com/1744844/6684/i/950/depositphotos_66846965-stock-photo-abstract-multicolor.jpg");
         border-radius: 50px;
         padding: 35px;
         }
 
         button {
+        cursor: pointer;
         border-top: 1px solid #f797b2;
         background: #a1d665;
         background:-webkit-gradient(linear, left top, left bottom, from(#9c3e3e), to(#a1d665));
@@ -75,6 +77,7 @@
         border-block-start-color: aqua;
         border: 2px solid;
         }
+
         #selecionado{
             background-color: aqua;
         }
@@ -86,114 +89,100 @@
         <h2>Minha lista de tarefa</h2>
         <span>Clique duas vezes num item para marca-lo com completo</span><br>
         Adcione aqui→<input type="text" name="item" id="caixaTexto">
-                <button onclick="minhaFunction()">Adcionar</button>
+        <button onclick="minhaFunction()">Adcionar</button>
         
         <ol id="lista"></ol>
         <button onclick="apagar(selecionado)">X</button> 
         <button onclick="irParaCima()">⇈</button>
         <button onclick="irParaBaixo()">⇊</button>
-        <button onclick="limparCompleto()">Limpar Conpleto</button>
+        <button onclick="limparCompleto()">Limpar Completo</button>
         <button onclick="history.go(0)">Limpar Lista</button>
         <button onclick="salvarLista()">Salvar Lista</button>
     </div>
     <script>
-    function apagar(id) {
-        id.remove()
-    }   
-    
-    function limparCompleto(){
-        let listaItens = document.getElementsByClassName("listaItens")
-        for (let i = 0; i < listaItens.length; i++) {
-            if (listaItens[i].style.textDecoration == "line-through") {
-                itemAdcionado[i].remove()
+        
+        function apagar(id) {
+            id.remove()
+        }   
+        
+        function limparCompleto(){
+            let pai = document.querySelector("#lista")
+            //aqui foi a forma de pegar como se fosse uma pilha (usar o - para pegar decrescendo)
+            let itensCriados = document.getElementsByTagName('li').length - 1
+            let itensFeitos, i
+            for (i = itensCriados; i >= 0; i--) {
+                itensFeitos = document.getElementsByTagName('li')[i]
+                if (itensFeitos.style.textDecoration == "line-through") {
+                pai.removeChild(itensFeitos);
+                }
                 
             } 
+        } 
+
+        function irParaBaixo() {
+            let papai = document.querySelector("#lista")
+            let itemQueEstaAbaixo = selecionado.nextElementSibling
+            papai.insertBefore(itemQueEstaAbaixo, selecionado)
+        }
+
+        function irParaCima() {
+            let oPai = document.querySelector("#lista")
+            let itemQueEstaAcima = selecionado.previousElementSibling
+            oPai.insertBefore(selecionado, itemQueEstaAcima)
+        }
+
+        function adicionarElemento (item, pai) { 
+            item.setAttribute("class", "listaItens")
+            pai.appendChild(item)
             
         }
-        
-    }
-    
 
-    function adicionarElemento (item, pai) { 
-        item.setAttribute("class", "listaItens")
-        pai.appendChild(item)
-        
-    }
+        function adcionarTexto(item, palavra) {
+            item.insertAdjacentHTML('afterbegin', palavra)
+        }
 
-    function adcionarTexto(item, palavra) {
-        item.insertAdjacentHTML('afterbegin', palavra)
-    }
-
-    function colocarId(itemId) {
-        itemId.setAttribute("id", "selecionado")
-        
-    }
-
-    function removerId(itemId) {
-        let retId = itemId.getAttributeNode("id")
-        itemId.removeAttributeNode(retId)
-    }
-
-    function escutarEventoClick(itemAdcionado) {
-        itemAdcionado.addEventListener("click", function(){
-            if (itemAdcionado.id) {
-                let anterior=document.getElementById('selecionado')
-                console.log
-                anterior.id = ""
-                colocarId(itemAdcionado)
-            } else {
-                colocarId(itemAdcionado)
-            }
-        }       
-        )}
-    
-
+        function colocarId(itemId) {
+            itemId.setAttribute("id", "selecionado")
             
+        }
 
-    function escutarEventoDblClick(itemAdcionado) {
-        itemAdcionado.addEventListener("dblclick", function(){
-            if (itemAdcionado.style.textDecoration == "line-through") {
-                itemAdcionado.style.textDecoration = "none"
+        function removerId(itemId) {
+            itemId.setAttribute("id", "")
+        }
 
-            } else {
-                itemAdcionado.style.textDecoration = "line-through"
-
-            }
-        })
-    }
-
-    function minhaFunction(){
-        let caixaTexto = document.getElementById("caixaTexto")
-        let listaPai = document.querySelector("#lista")
-        let itemNovo = document.createElement("li")
-        
-        let listaDosItens = caixaTexto.value
-        
-        adicionarElemento (itemNovo, listaPai)
-        adcionarTexto(itemNovo, listaDosItens)
-        escutarEventoDblClick(itemNovo)
-        escutarEventoClick(itemNovo)
-        caixaTexto.value = ""
-        
+        function escutarEventoClick(itemAdcionado) {
+            itemAdcionado.addEventListener("click", function(){
+                let idAnterior = document.getElementById('selecionado')
+                if (idAnterior) {
+                    removerId(idAnterior)   
+                } 
+                colocarId(itemAdcionado)
+                selecionado = itemAdcionado
+            })       
+        }
         
 
-    }
+        function escutarEventoDblClick(itemAdcionado) {
+            itemAdcionado.addEventListener("dblclick", function(){
+                if (itemAdcionado.style.textDecoration == "line-through") {
+                    itemAdcionado.style.textDecoration = "none"
+                } else {
+                    itemAdcionado.style.textDecoration = "line-through"
+                }
+            })
+        }
 
-    // for (let i = 0; i < itensSelecionados.length; i++) {
-    //             let select = itensSelecionados[i]
-    //             itensSelecionados[i].addEventListener("click", function(){
-    //             itensSelecionados[i].style.backgroundColor = "rgb(221,160,221)"
-
-    //         })
-    //     }   
-        
-    //     for (let i = 0; i < itensSelecionados.length; i++) {
-    //             let select = itensSelecionados[i]
-    //             itensSelecionados[i].addEventListener("dblclick", function(){
-    //             itensSelecionados[i].style.textDecoration = "line-through"
-                
-    //         })
-    //     }
+        function minhaFunction(){
+            let caixaTexto = document.getElementById("caixaTexto")
+            let listaPai = document.querySelector("#lista")
+            let itemNovo = document.createElement("li")
+            let listaDosItens = caixaTexto.value
+            adicionarElemento (itemNovo, listaPai)
+            adcionarTexto(itemNovo, listaDosItens)
+            escutarEventoDblClick(itemNovo)
+            escutarEventoClick(itemNovo)
+            caixaTexto.value = ""
+        }
 
     </script>
 </body>
