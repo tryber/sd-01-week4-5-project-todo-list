@@ -1,3 +1,4 @@
+window.onload = function() {
 reloadList();
 addClickBtnInput(returnById('btn-input'));
 addClickBtnExcluir(returnById('btn-excluir-ALL'));
@@ -200,4 +201,4 @@ function returnById(id){
     let element = document.getElementById(id);
     return element;
 }
-
+}
