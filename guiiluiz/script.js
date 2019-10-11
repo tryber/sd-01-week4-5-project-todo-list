@@ -1,14 +1,14 @@
 var selected;
 
 function createItem() {
-    let userInput = document.getElementById("userInput")
+    let taskInput = document.getElementById("taskInput")
     const orderedlist = document.getElementById("list");
 
     let listItem = document.createElement('li')
     orderedlist.appendChild(listItem);
 
     listItem.className = 'item';
-    listItem.textContent = userInput.value;
+    listItem.textContent = taskInput.value;
     listItem.addEventListener("click", function () {
         selectItem(listItem)
     })
@@ -16,7 +16,7 @@ function createItem() {
         completeItem(listItem)
     })
 
-    userInput.value = "";
+    taskInput.value = "";
 }
 
 function selectItem(listItem) {
