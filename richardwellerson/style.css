@@ -3,7 +3,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.divFather {
+.div-father {
     background-color: white;
     border: 3px groove black;
     border-radius: 30px;
@@ -40,10 +40,10 @@ button {
     text-decoration: none;
   }
 
-  .buttonBottom {
-      padding-top: 10%;
+  .button-bottom {
+      padding-top: 5%;
   }
 
-  .stageDiv {
+  .stage-div {
       padding: 3%;
   }

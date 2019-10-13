@@ -1,7 +1,7 @@
 let buttonClear = document.getElementById("clear-all")
 
 function textCap() {
-    let addTaskbtn = document.querySelector(".addTask")
+    let addTaskbtn = document.querySelector(".add-task")
     addTaskbtn.addEventListener("click", function () {
     liInsert()
     })
