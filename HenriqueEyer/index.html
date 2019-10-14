@@ -16,21 +16,36 @@
                 <h4 class="instructions">Clique duas vezes em um item para marcá-lo</h4>
             </nav>
             <span class="sub-div input">
-                <input type="text" id="new-task-input" placeholder="Nova tarefa">
-                <button type="button" value="Adicionar" id="new-task-btn" class="btn blue">Adicionar</button>
+                <input type="text" id="new-task-input" placeholder="Nova tarefa" maxlength="55s">
+                <button type="button" value="Adicionar" id="new-task-btn" maxlength="40" class="btn blue">Adicionar</button>
             </span>
             <div class="sub-div div-list">
                 <ol id="ol-list"></ol>
             </div>
             <div class="buttons-bottom sub-div">
-                <button class="btn red" id="btn-delete-item" type="button"><img src="icons/delete.png" ></button>
-                <button class="btn orange" id="btn-up" type="button"><img src="icons/arrow-up-thick.png" ></button>
-                <button class="btn orange" id="btn-down" type="button"><img src="icons/arrow-down-thick.png" ></button>
-                <button class="btn blue" id="btn-delete-completes" type="button">Limpar Completos</button>
-                <button class="btn red" id="btn-delete-ALL" type="button" >Limpar Lista</button>
-                <button class="btn green" id="btn-save" type="button" >Salvar</button></span>
+                <button class="btn red btn-main" id="btn-delete-item" type="button"><img src="icons/delete.png" ></button>
+                <button class="btn orange btn-main" id="btn-up" type="button"><img src="icons/arrow-up-thick.png" ></button>
+                <button class="btn orange btn-main" id="btn-down" type="button"><img src="icons/arrow-down-thick.png" ></button>
+                <button class="btn blue btn-main" id="btn-delete-completes" type="button">Limpar Completos</button>
+                <button class="btn red btn-main" id="btn-delete-ALL" type="button" >Limpar Lista</button>
+                <button class="btn green btn-main" id="btn-save" type="button" >Salvar</button></span>
             </div>
-        </main>
-        
-    </body>
-    </html>
+            
+            <div id="feedback">
+                <span>Itens Salvos</span>
+                <table id="feedbackSave">
+                    <thead>
+                        <th>Number</th>
+                        <th>Tarefa</th>
+                        <th>Status</th>
+                    </thead>
+                </table>
+                <div>
+                    <button class="btn green btn-confirm" id="btn-confirm" type="button" >Confirmar</button>
+                    <button class="btn red btn-cancel" id="btn-cancel" type="button" >Cancel</button>  
+                </div>     
+            </div>
+        </div>
+    </main>
+</body>
+</html>

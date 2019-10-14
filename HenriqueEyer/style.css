@@ -45,7 +45,6 @@ main {
     background: white;
     font-family: 'Righteous', cursive;
     border:1px #000000 solid;
-  
     min-width:800px;
     display: flex;
     flex-direction: column;
@@ -123,3 +122,31 @@ h1 img {
 body {
     background-color: #000000;
 }
+
+#feedback{
+    width: auto;
+    height: auto;
+    background: azure;
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 3px #000000 solid;
+    margin: 10%;
+}
+
+#btn-confirm{
+    margin-top: 20px;
+}
+
+#feedback span{
+    font-size: 20px;
+}
+
+#new-task-input{
+    font-size: 20px;
+}
+
+
