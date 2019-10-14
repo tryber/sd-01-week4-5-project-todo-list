@@ -49,8 +49,7 @@ window.onload = function() {
         
     }
     
-    function showSaveTasks(task,status,number) {
-        
+    function showSaveTasks(task,status,number) {  
         let textTask = addTextTask(createItem("td"), reduceTam(task));
         let lineTaskStatus = addTextTask(createItem("td"), status);
         let indiceTask = addTextTask(createItem("td"), number);
@@ -64,24 +63,39 @@ window.onload = function() {
     }
     
     function removeTaskSaves() {
-        let tasks = returnByTagName('td');
-        let sizeTasks = tasks.length;
-        let position;
-        for(position = 0; position < sizeTasks; position++) {
-            deleteElement(tasks[0]);
-        }
+        if(returnById('list-void')) {
+            deleteElement(returnById('list-void'));
+        } else {
+            let tasks = returnByTagName('td');
+            let sizeTasks = tasks.length;
+            let position;
+            for(position = 0; position < sizeTasks; position++) {
+                deleteElement(tasks[0]);
+            }
+        }   
     }
     
     function saveList() {
         let list = returnByTagName('li');
         let position;
-        for (position = 0; position < list.length; position++) { 
-            if (list[position].className == "completed") {
-                showSaveTasks(list[position].textContent, "C",(position+1));
-            } else {
-                showSaveTasks(list[position].textContent, "INC",(position+1));
+        if(list.length == 0) {
+            localStorage.clear();
+            disableAllMainBtn();
+            let elementFather = returnById('feedbackSave');
+            let informacao = createItem("span");
+            informacao.innerHTML="Lista Vazia";
+            informacao.id="list-void";
+            addElementInHTML(informacao,elementFather);
+            returnById('feedback').style.visibility="visible";
+        } else {
+            for (position = 0; position < list.length; position++) {
+                disableAllMainBtn(); 
+                if (list[position].className == "completed") {
+                    showSaveTasks(list[position].textContent, "C",(position+1));
+                } else {
+                    showSaveTasks(list[position].textContent, "INC",(position+1));
+                }
             }
-            
         }
     }
     
@@ -117,8 +131,7 @@ window.onload = function() {
     
     function addClickSaveBtn(btn) {
         btn.addEventListener('click' , function () {
-            disableAllMainBtn();
-            saveList();    
+            saveList();
         })
     }
     
