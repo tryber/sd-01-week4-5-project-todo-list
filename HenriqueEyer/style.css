@@ -128,13 +128,14 @@ body {
     height: auto;
     background: azure;
     visibility: hidden;
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
     border: 3px #000000 solid;
-    margin: 10%;
+    margin: 0 auto;
+    position: fixed;
+
 }
 
 #btn-confirm{
@@ -147,7 +148,9 @@ body {
 
 #new-task-input{
     font-size: 20px;
+    text-align: center;
 }
+
 
 #list-void{
     margin-left: 10%;

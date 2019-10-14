@@ -9,6 +9,7 @@ window.onload = function() {
     addClickUpBtn(returnById('btn-up'));
     addClickConfirmBtn(returnById('btn-confirm'));
     addClickCancelBtn(returnById('btn-cancel'));
+    addKeyupTextInput(returnById('new-task-input'));
     
     function addClickUpBtn(element) {
         element.addEventListener('click', function() {
@@ -40,7 +41,7 @@ window.onload = function() {
         }
     }
     
-    function reduceTam(string) {
+    function reduceSize(string) {
         if(string.length > 30) {
             return string.substring(0,30) + "...";
         } else {
@@ -50,7 +51,7 @@ window.onload = function() {
     }
     
     function showSaveTasks(task,status,number) {  
-        let textTask = addTextTask(createItem("td"), reduceTam(task));
+        let textTask = addTextTask(createItem("td"), reduceSize(task));
         let lineTaskStatus = addTextTask(createItem("td"), status);
         let indiceTask = addTextTask(createItem("td"), number);
         let row=createItem("tr");
@@ -81,7 +82,7 @@ window.onload = function() {
         if(list.length == 0) {
             localStorage.clear();
             disableAllMainBtn();
-            let elementFather = returnById('feedbackSave');
+            let elementFather = returnById('feedback');
             let informacao = createItem("span");
             informacao.innerHTML="Lista Vazia";
             informacao.id="list-void";
@@ -91,11 +92,12 @@ window.onload = function() {
             for (position = 0; position < list.length; position++) {
                 disableAllMainBtn(); 
                 if (list[position].className == "completed") {
-                    showSaveTasks(list[position].textContent, "C",(position+1));
+                    showSaveTasks(list[position].textContent, "S",(position+1));
                 } else {
-                    showSaveTasks(list[position].textContent, "INC",(position+1));
+                    showSaveTasks(list[position].textContent, "N",(position+1));
                 }
             }
+            disableAllMainBtn();
         }
     }
     
@@ -242,14 +244,27 @@ window.onload = function() {
         })
     }
     
+    function addTask() {
+        let elementFather = returnById('ol-list');
+        let textInput = returnById('new-task-input').value;
+        let taskLi = addTextTask(createItem("li"), textInput);
+        addElementInHTML(taskLi, elementFather);
+        returnById('new-task-input').value = "";
+    }
+    
     function addClickInputBtn(element) {
         element.addEventListener('click', function() {
             if(returnById('new-task-input').value) {
-                let elementFather = returnById('ol-list');
-                let textInput = returnById('new-task-input').value;
-                let taskLi = addTextTask(createItem("li"), textInput);
-                addElementInHTML(taskLi, elementFather);
-                returnById('new-task-input').value = "";
+                addTask();
+            }
+        })
+    }      
+    function addKeyupTextInput(element){
+        element.addEventListener('keydown', function(){
+            if(event.keyCode==13){
+                if(returnById('new-task-input').value) {
+                    addTask();
+                }
             }
         })
     }
