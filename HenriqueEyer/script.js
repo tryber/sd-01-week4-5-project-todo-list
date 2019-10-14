@@ -259,9 +259,9 @@ window.onload = function() {
             }
         })
     }      
-    function addKeyupTextInput(element){
+    function addKeyupTextInput(element) {
         element.addEventListener('keydown', function(){
-            if(event.keyCode==13){
+            if(event.keyCode == 13){
                 if(returnById('new-task-input').value) {
                     addTask();
                 }
