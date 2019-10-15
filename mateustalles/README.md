@@ -1,6 +1,6 @@
 PROJETO TO-DO LIST
 -por Mateus Talles
-Link na GitPages: mateustalles.github.io/projetos/todo-list/
+Link na GitHub Pages: mateustalles.github.io/projetos/todo-list/
 
 Olá, eis aqui o último projeto de Javascript, que envolve
 criar uma lista de tarefas, ou "To-Do" List com algumas
