@@ -1,13 +1,16 @@
 body {
     background-color: #0FA36B;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', sans-serif
 }
-li {
+
+li,input[type="button"] {
     cursor: pointer;
 }
+
 li:hover {
     background-color: #EDFFFA;
 }
+
 #input-text {
     border: 1px solid black;
     width: 320px;
@@ -18,20 +21,25 @@ li:hover {
     border-radius: 15px;
     padding: 2px 8px;
 }
+
 .active {
     background-color: #B7FFE3;
 }
+
 .button {
     margin: 2px 8px;
     border-radius: 20px;
     filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.9));
 }
+
 .complete {
     text-decoration: line-through;
 }
+
 .complete.selected {
     font-style: italic;
 }
+
 .container {
     position: absolute;
     left: 50%;
@@ -41,4 +49,8 @@ li:hover {
     padding: 8px;
     background-color:white;
     border-radius: 15px;
+}
+
+.list-container {
+    min-height: 140px;
 }
