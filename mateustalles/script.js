@@ -47,39 +47,39 @@ function selectionPatterns(list) {
     list.lastChild.addEventListener("click", function() {
         let itemClassName = this.className;
         switch (itemClassName) {
-        case "list-item" :
-            checkForActive();
-            this.className += " active";
-            break;
+            case "list-item" :
+                checkForActive();
+                this.className += " active";
+                break;
 
-        case "list-item active" :
-            this.className = "list-item complete";
-            break;
+            case "list-item active" :
+                this.className = "list-item complete";
+                break;
 
-        case "list-item complete active" :
-            this.className = "list-item complete";
-            break;
+            case "list-item complete active" :
+                this.className = "list-item complete";
+                break;
 
-        case "list-item complete" :
-            clickCount++;
-            checkForActive();
-            this.className = "list-item complete active selected";
-            let clickTimeout = setTimeout(function(){ 
-                clickCount = 0; 
-                document.querySelector(".list-item.complete.active.selected").className = "list-item complete active";
-                clearTimeout(clickTimeout);
-            }, 1000);
-            break;
+            case "list-item complete" :
+                clickCount++;
+                checkForActive();
+                this.className = "list-item complete active selected";
+                let clickTimeout = setTimeout(function(){ 
+                    clickCount = 0; 
+                    document.querySelector(".list-item.complete.active.selected").className = "list-item complete active";
+                    clearTimeout(clickTimeout);
+                }, 1000);
+                break;
 
-        case "list-item complete active selected" :
-            clickCount++
-            if (clickCount == 2) { 
-                this.className = "list-item"
-                clickCount = 0;
-            };
-            break;
+            case "list-item complete active selected" :
+                clickCount++
+                if (clickCount == 2) { 
+                    this.className = "list-item"
+                    clickCount = 0;
+                };
+                break;
         };
-   });
+    });
    function checkForActive() {
         if ( list.contains(document.querySelector(".complete.active")) ) {
             let completeActiveItem = document.querySelector(".complete.active");
@@ -144,8 +144,8 @@ function buttonMoveUp() {
 };
 
 function buttonMoveDown() {
-    let buttonMoveUp = document.getElementById("button-movedown");
-    buttonMoveUp.addEventListener("click", function() {
+    let buttonMoveDown = document.getElementById("button-movedown");
+    buttonMoveDown.addEventListener("click", function() {
         let itemMove = document.querySelector("[class$='active']");
         if (!!itemMove.nextSibling) {
             itemMove.parentNode.insertBefore(itemMove, itemMove.nextSibling.nextSibling);
