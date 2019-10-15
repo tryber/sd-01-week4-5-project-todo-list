@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>LISTA DE TAREFAS - TRYBE</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="container">
+        <div><h1>Minha Lista de Tarefas</h1></div>
+        <div><p>Bom dia! Clique duas vezes em um item para marcá-lo como completo.</p></div>
+        <div class="input-container"><input type="text" id="input-text" /><input type="button" class="button" id="input-submit" value="Adicionar"/></div>
+        <div class="list-container">
+            <ol class="ordered-list"></ol>
+        </div>
+        <div class="button-container">
+            <input type="button" class="button" id="button-remove" value="Apagar todos" />
+            <input type="button" class="button" id="button-remove-complete" value="Apagar completos" />
+            <input type="button" class="button" id="button-moveup" value="Mover pra cima" />
+            <input type="button" class="button" id="button-movedown" value="Mover pra baixo" />
+            <input type="button" class="button" id="button-save" value="Salvar lista" />
+            <input type="button" class="button" id="button-erase-memory" value="Apagar meḿoria local" />
+            <input type="button" class="button" id="button-erase-selected-local-storage" value="Apagar selecionado + Local Storage" />
+            <input type="button" class="button" id="button-erase-selected" value="Apagar selecionado" />
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>

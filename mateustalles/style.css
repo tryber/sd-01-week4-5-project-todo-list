@@ -1,0 +1,56 @@
+body {
+    background-color: #0FA36B;
+    font-family: 'Segoe UI', sans-serif
+}
+
+li,input[type="button"] {
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #EDFFFA;
+}
+
+#input-text {
+    border: 1px solid black;
+    width: 320px;
+}
+
+.input-container{
+    background-color: #16FFA6;
+    border-radius: 15px;
+    padding: 2px 8px;
+}
+
+.active {
+    background-color: #B7FFE3;
+}
+
+.button {
+    margin: 2px 8px;
+    border-radius: 20px;
+    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.9));
+}
+
+.complete {
+    text-decoration: line-through;
+}
+
+.complete.selected {
+    font-style: italic;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 45%;
+    transform: translate(-50%);
+    padding: 8px;
+    background-color:white;
+    border-radius: 15px;
+}
+
+.list-container {
+    min-height: 140px;
+}
