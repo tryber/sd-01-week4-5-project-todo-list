@@ -67,7 +67,7 @@ window.onload = function() {
         if(returnById('list-void')) {
             deleteElement(returnById('list-void'));
         } else {
-            let tasks = returnByTagName('td');
+            let tasks = returnByTagName('tr');
             let sizeTasks = tasks.length;
             let position;
             for(position = 0; position < sizeTasks; position++) {
