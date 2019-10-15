@@ -1,16 +1,12 @@
-//o codigo esta incompleto mas estou com dúvida em um ponto primordial 
-
-
-
-
 let tag = document.getElementsByTagName("ol")[0];
 let textoInput = document.getElementById("adicionar-tarefa");
 let gerarLista = document.getElementsByClassName("estilo-botoes")[0];
+let removerLista = document.getElementsByClassName("estilo-botoes")[2];
 let indice = 0;
 
-gerarLista.addEventListener('click', function() {
-    let lista = '<li>' + textoInput.value + '</li>';    //o ponto que estou em dúvida é em relação a esta prática
-    tag.innerHTML += lista;                             //posso realizar desta forma ou é um método inapropriado ?    
+gerarLista.addEventListener('click', function gerarLista() {
+    let lista = '<li>' + textoInput.value + '</li>';    
+    tag.innerHTML += lista;                                
     textoInput.value = '';                  
     textoInput.focus();
     gerarClasse();
@@ -22,3 +18,13 @@ function gerarClasse() {
     indice++;
 }
 
+removerLista.addEventListener('click', function() {
+    while(tag.firstChild) {
+    tag.firstChild.remove();
+    }
+})
+
+itemSelecionado.addEventListener('dblclick', function() {
+    let itemSelecionado = document.getElementsByClassName("lista-de-tarefas")[0];
+    itemSelecionado.className = 'item-selecionado';
+})

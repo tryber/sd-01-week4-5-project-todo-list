@@ -1,26 +1,33 @@
 .centralizar-estrutura{
     text-align: center;
 }
-#centrar-elementos-na-pagina{
+p {
+    color: rgba(92, 70, 70, 0.664);
+
+}
+.lista-de-tarefas:hover {
+    background-color: #ccc;
+}
+#centrar-elementos-na-pagina {
     width: 100vw;
     height: 100vh;
-    background: burlywood;
+    background: #ccc;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center
 }
-#container{
+#container {
     width: 500px;
     height: auto;
-    background:rgb(152, 236, 177);
+    background: hsla(66, 26%, 30%, 0.329);
     border-radius: 20px;
 }
-.estilo-botoes{
+.estilo-botoes {
     border-radius: 100px;
     cursor: pointer;
 }
-/*.adicionar-estilo-lista-de-tarefas{         informações a serem usadas no decorrer do projeto
+.item-selecionado {         
     text-decoration: line-through;   
     color: red;
-}*/
+}
