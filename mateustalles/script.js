@@ -94,18 +94,17 @@ function selectionPatterns(list) {
 
 function buttonRemoveAllAndComplete() {
     let buttonRemoveAll = document.getElementById("button-remove");
-    buttonRemoveAll.addEventListener("click", removeAllList);
+    buttonRemoveAll.addEventListener("click", function() {
+        removeAllList(".list-item");
+    });
     let buttonRemoveComplete = document.getElementById("button-remove-complete");
     buttonRemoveComplete.addEventListener("click", function() {
-        let completeTasks = document.querySelectorAll("[class$='complete']");
-        for (tasks of completeTasks) {
-            tasks.remove();
-        };
+        removeAllList("[class$='complete']");
     });
 };
 
-function removeAllList () {
-    let taskList = document.querySelectorAll(".list-item");
+function removeAllList (selector) {
+    let taskList = document.querySelectorAll(selector);
     for (let task of taskList) {
         task.remove();
     };
