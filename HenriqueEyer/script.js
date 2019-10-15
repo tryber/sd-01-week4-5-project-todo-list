@@ -80,7 +80,6 @@ window.onload = function() {
         let list = returnByTagName('li');
         let position;
         if(list.length == 0) {
-            localStorage.clear();
             disableAllMainBtn();
             let elementFather = returnById('feedback');
             let informacao = createItem("span");
@@ -88,9 +87,9 @@ window.onload = function() {
             informacao.id="list-void";
             addElementInHTML(informacao,elementFather);
             returnById('feedback').style.visibility="visible";
+            filterBrightnesslight(returnById('feedback'));
         } else {
             for (position = 0; position < list.length; position++) {
-                disableAllMainBtn(); 
                 if (list[position].className == "completed") {
                     showSaveTasks(list[position].textContent, "S",(position+1));
                 } else {
@@ -98,6 +97,7 @@ window.onload = function() {
                 }
             }
             disableAllMainBtn();
+            filterBrightnesslight(returnById('feedback'));
         }
     }
     
@@ -134,6 +134,7 @@ window.onload = function() {
     function addClickSaveBtn(btn) {
         btn.addEventListener('click' , function () {
             saveList();
+            filterBrightnessDark(returnByClassName('container')[0]);
         })
     }
     
@@ -156,6 +157,15 @@ window.onload = function() {
             }
         })
     }
+    
+    function filterBrightnessDark(element){
+        element.style.filter= "brightness(40%)";
+    }
+
+    function filterBrightnesslight(element){
+        element.style.filter= "brightness(100%)";
+    }
+    
     
     function deleteAllItem() {
         let list = returnByTagName('li');
@@ -235,6 +245,7 @@ window.onload = function() {
         returnById('feedback').style.visibility="hidden";
         disableAllMainBtn();
         removeTaskSaves();
+        filterBrightnesslight(returnByClassName('container')[0]);
     }
     
     function addClickConfirmBtn(element) {
