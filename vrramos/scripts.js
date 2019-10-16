@@ -50,13 +50,14 @@ window.onload = function() {
         li = criarElemento('li')                
         adicionarElemento(ol,li)   
         li.textContent = inputTarefa
-    
-        selecionarTarefa(li)        
+        
+        selecionarTarefa(li)  
+        tarefaCompletada(li)      
     }
     
     function selecionarTarefa(itemAdicionado) {
         itemAdicionado.addEventListener('click', function(){
-            liId = document.getElementById('selecionado')            
+            let liId = document.getElementById('selecionado')            
             
             if (liId) {
                 removerId(liId)
@@ -64,26 +65,26 @@ window.onload = function() {
             colocarId(itemAdicionado)            
         })        
     } 
-
+    
     function colocarId(itemId) {
         itemId.setAttribute("id", "selecionado")
     }
-
+    
     function removerId(itemId) {
         itemId.setAttribute("id", "")
     }    
     
-    /*  function adicionarFuncaoAoClicarDuasVezes() {
-        let liClasse, i
-        liClasse = document.getElementsByTagName('li')
-        
-        for( i = 0; i < liClasse.length; i++){
-            liClasse[i].addEventListener('click', function() {
-                liClasse[i - 1].classList.add('selecionar-tarefa')
-            })
-        } 
-    } */
-    
+    function tarefaCompletada(itemAdicionado) {
+        itemAdicionado.addEventListener('dblclick', function(){
+            if (itemAdicionado.style.textDecoration == "line-through"){
+                itemAdicionado.style.textDecoration = "none"
+            } else {
+                itemAdicionado.style.textDecoration = "line-through"
+            }                             
+        }) 
+    }
+
+
     criandoListaOl()
     ativarBotao()
     inserirInputComEnter()

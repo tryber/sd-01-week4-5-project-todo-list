@@ -33,7 +33,8 @@ body {
 
 
 .tarefa-completada {
-    color: red;
+    font-style: italic;
+    text-decoration: line-through;
 }
 
 button {
