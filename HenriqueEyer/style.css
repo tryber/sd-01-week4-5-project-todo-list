@@ -1,0 +1,157 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.completed {
+    text-decoration:line-through;
+    color:#808080;
+}
+body {
+    margin:0;   
+}
+
+.btn {
+    cursor:pointer;
+} 
+
+li {
+    cursor:pointer;
+}
+li:hover {
+    background: silver;
+}
+
+button:hover {
+    filter: saturate(40%);
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding:150px;
+}
+
+.sub-div {
+    padding: 20px;
+}
+
+
+.container {
+    background: white;
+    font-family: 'Righteous', cursive;
+    border:1px #000000 solid;
+    min-width:800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction:column;
+    width: auto;
+    height: auto;
+    background: darkorange;
+    text-align: center;
+    align-items: center;
+}
+
+.btn {
+    border: 0px;
+    padding: 10px 20px;
+    margin: 5px;
+    color: aliceblue;
+    font-size: 15px;
+    font-family: 'Righteous', cursive;
+}
+
+.btn img {
+    height: 13px;
+}
+
+.blue {
+    background: darkblue;
+}
+
+.red {
+    background:darkred;
+}
+
+.green {
+    background: green;
+}
+
+.orange {
+    background: orange;
+}
+
+
+li {
+    border-bottom: 1px silver solid;
+    font-size: 20px;
+    word-break: break-all;
+    height: 30px;
+}
+
+#input-txt {
+    font-size: 20px;
+}
+
+.input {
+    display: flex;
+    flex-direction:column;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    font-size:40px;
+}
+
+h1 img {
+    height:40px;
+    margin-left: 10px;
+}
+
+.instructions {
+    font-size:20px;
+}
+body {
+    background-color: #000000;
+}
+
+#feedback {
+    width: auto;
+    height: auto;
+    background: azure;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 3px #000000 solid;
+    position: absolute;
+    z-index: 2;
+    
+}
+
+#btn-confirm {
+    margin-top: 20px;
+}
+
+#feedback span {
+    font-size: 20px;
+}
+
+#new-task-input {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#list-void {
+    margin-left: 10%;
+}
