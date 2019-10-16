@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>LISTA DE TAREFAS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <div class="cabecalho">
+            <p class="textoMaior">Minha lista de tarefas</p>
+            <p class="textoMenor">
+                Digite o item e clique em adicionar.
+                Clique duas vezes na tarefa para marcá-la como realizada.
+            </p>
+        </div>
+        <div class="inputs">
+            <input type="text" id="inputtxt">
+            <button class="botao botaoAdicionar" onclick="adicionarTarefa()">Adicionar</button>
+        </div>
+        <div>
+            <ol class="containerOl">
+            </ol>
+        </div>
+        <div>
+            <button class="botao botaoApagarTarefaSelecionada" onclick="apagarTarefaSelecionada()">X</button>
+            <button class="botao botaoSubirTarefa" onclick="subirTarefa()"></button>
+            <button class="botao botaoDescerTarefa" onclick="descerTarefa()"></button>
+            <button class="botao botaoApagarTarefasCompletas" onclick="apagarTarefasCompletas()">Limpar Completos</button>
+            <button class="botao botaoApagarTodasTarefas" onclick="apagarTodasTarefas()">Limpar Lista</button>
+            <button class="botao botaoSalvarlista" onclick="salvarLista()">Salvar Lista</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
