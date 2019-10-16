@@ -238,6 +238,7 @@ window.onload = function() {
     function addClickCancelBtn(element){
         element.addEventListener('click', function() {
             feedbackBtn();
+            alert('Operação de salvar a tela cancelada');
         })
     }
     
@@ -252,6 +253,7 @@ window.onload = function() {
         element.addEventListener('click', function() {
             sendLocalStorage();
             feedbackBtn();
+            alert('Lista Salva');
         })
     }
     
