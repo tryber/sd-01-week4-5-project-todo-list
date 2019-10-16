@@ -2,9 +2,7 @@
 * {
     box-sizing: border-box;
 }
-/* filter: brightness(
-41%
-)} */
+
 .completed {
     text-decoration:line-through;
     color:#808080;
@@ -125,7 +123,7 @@ body {
     background-color: #000000;
 }
 
-#feedback{
+#feedback {
     width: auto;
     height: auto;
     background: azure;
@@ -140,20 +138,20 @@ body {
     
 }
 
-#btn-confirm{
+#btn-confirm {
     margin-top: 20px;
 }
 
-#feedback span{
+#feedback span {
     font-size: 20px;
 }
 
-#new-task-input{
+#new-task-input {
     font-size: 20px;
     text-align: center;
 }
 
 
-#list-void{
+#list-void {
     margin-left: 10%;
 }
