@@ -100,9 +100,22 @@ window.onload = function() {
         })
     }
     
+    function limparTodasAsTarefas() {
+        let button = document.querySelector('#btn-limpar-lista')
+        button.addEventListener('click', function(){
+            let elementoPai = document.querySelector('.lista-ordenada')
+            let todasTarefas = document.getElementsByTagName('li').length - 1
+            
+            for(let i = todasTarefas; i >= 0; i--){
+                let apagarTarefas = document.getElementsByTagName('li')[i] 
+                elementoPai.removeChild(apagarTarefas)
+            }            
+        })      
+    }
     
     criandoListaOl()
     ativarBotao()
     inserirInputComEnter()
     limparTarefasCompletas()
+    limparTodasAsTarefas()
 }
