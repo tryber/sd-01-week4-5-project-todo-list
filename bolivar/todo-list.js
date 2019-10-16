@@ -10,7 +10,7 @@ function searchElements() {
 // Add item on ordenaded list
 var ind = -1;
 
-function addItem(){
+function addItem() {
     ind += 1
     var element = searchElements();
     var item = document.createElement("li");
@@ -28,22 +28,22 @@ function addItem(){
 
 // Event Click
 var countSelectClick = 0;
-function selectclick(span){
-    span.addEventListener("click", function(){
+function selectclick(span) {
+    span.addEventListener("click", function () {
         countSelectClick += 1;
-        if ((countSelectClick == 1) && (this.id !== "selected-item")){
+        if ((countSelectClick == 1) && (this.id !== "selected-item")) {
             reviewSelect()
             this.id = "selected-item"
         }
-        else if ((countSelectClick == 1) && (this.id == "selected-item")){
+        else if ((countSelectClick == 1) && (this.id == "selected-item")) {
             reviewSelect()
-        }   
-        else if ((countSelectClick == 2) && (this.id !== "selected-item")){
+        }
+        else if ((countSelectClick == 2) && (this.id !== "selected-item")) {
             reviewSelect()
             this.id = "selected-item"
             countSelectClick = 0;
         }
-        else if ((countSelectClick == 2) && (this.id == "selected-item")){
+        else if ((countSelectClick == 2) && (this.id == "selected-item")) {
             reviewSelect()
             countSelectClick = 0;
         }
@@ -51,10 +51,10 @@ function selectclick(span){
 }
 
 // Erase some others selections
-function reviewSelect(){
+function reviewSelect() {
     var element = searchElements();
-    for (i = 0; i < element[0].childElementCount; i++){
-        if (element[0].childNodes[i].firstChild.id == "selected-item"){
+    for (i = 0; i < element[0].childElementCount; i++) {
+        if (element[0].childNodes[i].firstChild.id == "selected-item") {
             element[2].id = "item" + i
         }
     }
@@ -62,20 +62,20 @@ function reviewSelect(){
 
 // Mark done itens
 var countMarkClick = 0
-function markclick(item){ 
-    item.addEventListener("dblclick", function(){
+function markclick(item) {
+    item.addEventListener("dblclick", function () {
         countMarkClick += 1
-        if ((countMarkClick == 1) && (this.className !== "marked-item")){
+        if ((countMarkClick == 1) && (this.className !== "marked-item")) {
             this.className = "marked-item";
         }
-        else if ((countMarkClick == 1) && (this.className == "marked-item")){
+        else if ((countMarkClick == 1) && (this.className == "marked-item")) {
             this.className = "item";
-        }   
-        else if ((countMarkClick == 2) && (this.className !== "marked-item")){
+        }
+        else if ((countMarkClick == 2) && (this.className !== "marked-item")) {
             this.className = "marked-item";
             countMarkClick = 0;
         }
-        else if ((countMarkClick == 2) && (this.className == "marked-item")){
+        else if ((countMarkClick == 2) && (this.className == "marked-item")) {
             this.className = "item";
             countMarkClick = 0;
         }
@@ -83,9 +83,9 @@ function markclick(item){
 }
 
 // Erase List Button 
-function clean(){
+function clean() {
     var element = searchElements();
-    for (i = 0; i < element[0].childElementCount; i++){
+    for (i = 0; i < element[0].childElementCount; i++) {
         var remove = element[0].childNodes[i];
         element[0].removeChild(remove);
         i = -1;
@@ -93,12 +93,12 @@ function clean(){
 }
 
 // Erase Done Button
-function cleanDone(){
+function cleanDone() {
     var element = searchElements();
-    for (i = 0; i < element[0].childElementCount; i++){
+    for (i = 0; i < element[0].childElementCount; i++) {
         var remove = element[0].childNodes[i].firstChild;
         var father = element[0].childNodes[i];
-        if (remove.className == "marked-item"){
+        if (remove.className == "marked-item") {
             element[0].removeChild(father);
             i = -1;
         }
@@ -106,9 +106,9 @@ function cleanDone(){
 }
 
 // Save List
-function saveList(){
+function saveList() {
     var element = searchElements();
-    for (i = 0; i < element[0].childElementCount; i++){
+    for (i = 0; i < element[0].childElementCount; i++) {
         var keyitem = "listitem" + i;
         var keyclassName = "listclass" + i;
         var keyid = "listid" + i;
@@ -122,9 +122,9 @@ function saveList(){
 }
 
 // Get lsit after loading page
-function getList(){
+function getList() {
     var element = searchElements();
-    for (i = 0; i < localStorage.length/3; i++){
+    for (i = 0; i < localStorage.length / 3; i++) {
         var keyitem = "listitem" + i
         var keyclassName = "listclass" + i
         var keyid = "listid" + i
@@ -139,9 +139,9 @@ function getList(){
 }
 
 // After loading page, itens will be removed from the save list, for save, please press the button saveS list again
-function removeSaved(){
-    var limit = localStorage.length/3
-    for (i = 0; i <= limit; i++){
+function removeSaved() {
+    var limit = localStorage.length / 3
+    for (i = 0; i <= limit; i++) {
         var keyitem = "listitem" + i
         var keyclassName = "listclass" + i
         var keyid = "listid" + i
@@ -152,13 +152,13 @@ function removeSaved(){
 }
 
 // Move Up
-function moveItensUp(){
+function moveItensUp() {
     var element = searchElements();
     var numElement = element[0].childElementCount;
-    for (i = 0; i < numElement; i++){
-        if (element[0].childNodes[i].firstChild.id == "selected-item"){
-            if (i == 0){
-                element[0].insertBefore(element[0].childNodes[i],element[0].childNodes[numElement]);
+    for (i = 0; i < numElement; i++) {
+        if (element[0].childNodes[i].firstChild.id == "selected-item") {
+            if (i == 0) {
+                element[0].insertBefore(element[0].childNodes[i], element[0].childNodes[numElement]);
                 element[0].insertBefore(element[0].childNodes[numElement], element[0].childNodes[numElement - 1]);
                 break
             }
@@ -170,11 +170,11 @@ function moveItensUp(){
 }
 
 // Erase Selected
-function cleanSelected(){
+function cleanSelected() {
     var element = searchElements();
     var numElement = element[0].childElementCount;
-    for (i = 0; i < numElement; i++){
-        if (element[0].childNodes[i].firstChild.id == "selected-item"){
+    for (i = 0; i < numElement; i++) {
+        if (element[0].childNodes[i].firstChild.id == "selected-item") {
             element[0].removeChild(element[0].childNodes[i])
             break
         }
@@ -183,30 +183,37 @@ function cleanSelected(){
 
 
 // Move Down
-function moveItensDown(){
+function moveItensDown() {
     var element = searchElements();
     var numElement = element[0].childElementCount;
-    for (i = 0; i < numElement; i++){
-        if (element[0].childNodes[i].firstChild.id == "selected-item"){
-            if (i == 0){
-                element[0].insertBefore(element[0].childNodes[i],element[0].childNodes[numElement]);
-                element[0].insertBefore(element[0].childNodes[numElement], element[0].childNodes[numElement - 1]);
-            }
-            else {
-                element[0].insertBefore(element[0].childNodes[i], element[0].childNodes[i + 1]);
+    var array = new Array();
+    var count = 0;
+    for (i = 0; i < numElement; i++) {
+        if (element[0].childNodes[i].firstChild.id == "selected-item") {
+            if (i !== (element[0].childElementCount - 1)){
+                for (l = i; l < element[0].childElementCount; l++) {
+                    array[count] = element[0][l]
+                    count += 1
+                    element[0].removeChild(element[0][l]);
+                }
+                element[0].appendChild(array[1]);
+                element[0].appendChild(array[0]);
+                for (i = 2; i < array.length; i++){
+                    element[0].appendChild(array[i])
+                }
             }
         }
     }
 }
 
 // Mouse Hover
-function mouseHouver(){
+function mouseHouver() {
     var element = searchElements();
-    for(i = 0; i < element[3].length; i++){
-        element[3][i].addEventListener("mouseover", function(){
+    for (i = 0; i < element[3].length; i++) {
+        element[3][i].addEventListener("mouseover", function () {
             this.style.backgroundColor = "#DF2935";
         })
-        element[3][i].addEventListener("mouseout", function(){
+        element[3][i].addEventListener("mouseout", function () {
             this.style.backgroundColor = "red";
         })
     }
