@@ -1,3 +1,38 @@
+body{
+    background-color: #FEFEFE;
+    font-family: 'Raleway',sans-serif;
+}
+#main-title {
+    text-align: center;
+    background-color: #DF2935;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 10px 50px 20px 50px;
+}
+#main-title span{
+    font-size: 60px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #FEFEFE;
+    border-radius: 50px;
+    padding: 8px;
+}
+#resume-text {
+    text-align: center;
+    background-color: #DF2935;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 20px 150px 20px 150px;
+    font-size: 20px;
+}
+#main-input {
+    width:300px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 3px solid black;
+    
+}
 #selected-item{
     background-color: #DF2935;
     padding: 10px;
@@ -7,5 +42,22 @@
     text-decoration: line-through;
 }
 .button{
-    cursor: move;
+    cursor: pointer;
+    font-size: 20px;
+    display: inline-block;
+    padding: 2px;
+    justify-content: center;
+    width: 150px;
+    margin: 10px 10px 10px 10px;
+    background-color: red;
+}
+.div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+#main-list{
+    font-size: 30px;
+    font-weight: 600;
 }

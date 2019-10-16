@@ -6,15 +6,28 @@
         <link href="todo-list.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
-        <h1>Task List</h1>
-        <p>How it work??</p>
-        <input id="main-input" maxLength = "50" type="text" >
-        <button class="button" id="buttonlist" type="submit" onclick="listSize()">Add Item</button>
-        <ol id="main-list" class="main-list"></ol>
-        <button class="button" id="buttonclean" type="submit" onclick="clean()">Erase List</button>
-        <button class="button" id="buttoncleandone" type="submit" onclick="cleanDone()">Erase Done</button>
-        <button class="button" id="buttonsave" type="submit" onclick="saveList()">Save List</button>
-        <button class="button" id="buttonsave" type="submit" onclick="moveItensUp()">Up</button>
+        <header>
+            <h1 id="main-title"><span>Task List</span></h1>
+            <p id="resume-text">After loading page, itens will be removed from the save list, for save, please press the button save list again! 
+                <br>
+                For select, press the button one time, for mark, 2 times!
+            </p>
+        </header>
+        <div class="div">
+            <input id="main-input" maxLength="50" type="text">
+            <button id="buttonlist" class="button" type="submit" onclick="addItem()"> Add Item </button>
+        </div>
+        <div class="div">
+            <ol id="main-list" class="main-list"></ol>
+        </div>
+        <div class="div">
+            <button id="button-clean" class="button" type="submit" onclick="clean()">Erase List</button>
+            <button id="button-cleandone" class="button" type="submit" onclick="cleanDone()">Erase Done</button>
+            <button id="button-cleanselect"  class="button" type="submit" onclick="cleanSelected()">Erase Selected</button>
+            <button id="button-save" class="button" type="submit" onclick="saveList()">Save List</button>
+            <button id="button-up"  class="button" type="submit" onclick="moveItensUp()">Up</button>
+            <button id="button-Down"  class="button" type="submit" onclick="moveItensDown()">Down</button>
+        </div>
     </body>
     <script src="todo-list.js"></script>
 </html>
