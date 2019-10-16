@@ -1,0 +1,42 @@
+body {
+    background-color: #3EEC3E;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#conteudo-da-lista {
+    width: 700px;
+    height: auto;
+    background-color: white;
+    border-radius: 40px;  
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+#frase-tarefa-completa {
+    font-style: italic;
+    color: lightslategray;
+}
+
+#entrada-tarefa {
+    margin-top: 20px;
+}
+
+#lista-de-botoes {
+    margin-top: 100px;
+}
+
+#selecionado{
+    background-color: lightgrey;
+}
+
+
+.tarefa-completada {
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+button {
+    cursor: pointer;
+}
