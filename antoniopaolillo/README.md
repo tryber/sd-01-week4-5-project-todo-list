@@ -4,7 +4,7 @@ Este é um projeto realizado para o curso de Desenvolvimento de Software da TRYB
 
 O projeto visa construir uma lista de tarefas.
  
-O usuário pode inserir a tarefa que desejar por meio do input, e ao clicar em 'adicionar', a tarefa será adicionada à tabela de tarefas.
+O usuário pode inserir a tarefa que desejar por meio do input, e ao clicar em 'adicionar', a tarefa será adicionada à lista de tarefas.
 
 Pode-se excluir a tarefa selecionando a mesma clicando-na e pressionando o botão vermelho identificado por um 'X'.
 Ao clicar duas vezes sobre uma tarefa você marca-a como completa, e ao clicar duas vezes novamente, desmarca-a.

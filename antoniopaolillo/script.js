@@ -1,80 +1,85 @@
-var tarefaSelecionada, todosElementos, proximoElemento;
+var tarefaSelecionada, numeroDeTarefas, proximaTarefa;
 var elementoPai = document.getElementsByClassName('containerOl')[0];
 
 function adicionarTarefa() {
-    let nomeTarefa = document.getElementById('inputtxt');
-    let nomeTarefaValue = nomeTarefa.value;
-    let novoElemento = document.createElement('li');
+    let tarefaInserida = document.getElementById('inputtxt');
+    let nomeTarefaInserida = tarefaInserida.value;
+    let novaTarefa = document.createElement('li');
 
-    if (nomeTarefaValue != "") {
-        novoElemento.setAttribute("class", "tarefa");
-        novoElemento.innerHTML = nomeTarefaValue;
+    if (nomeTarefaInserida != "") {
+        novaTarefa.setAttribute("class", "tarefa");
+        novaTarefa.innerHTML = nomeTarefaInserida;
 
-        elementoPai.appendChild(novoElemento);
-        nomeTarefa.value = "";
+        elementoPai.appendChild(novaTarefa);
+        tarefaInserida.value = "";
 
-        marcarELementoCompleto(novoElemento)
-        selecionarElemento(novoElemento);
+        marcarTarefaCompleta(novaTarefa);
+        selecionarTarefa(novaTarefa);
     } else {
         alert("Faltou o nome, amigão!")
     }
 }
 
-function marcarELementoCompleto(novoElemento) {
-    novoElemento.addEventListener('dblclick', function () {
-        if (novoElemento.style.textDecoration == "line-through") {
-            novoElemento.style.textDecoration = "none";
+function marcarTarefaCompleta(novaTarefa) {
+    novaTarefa.addEventListener('dblclick', function () {
+        if (novaTarefa.style.textDecoration == "line-through") {
+            novaTarefa.style.textDecoration = "none";
         } else {
-            novoElemento.style.textDecoration = "line-through";
+            novaTarefa.style.textDecoration = "line-through";
         }
     })
 
 }
 
-function selecionarElemento(novoElemento) {
-    novoElemento.addEventListener('click', function () {
-        let elementoAntigo = document.getElementById('tarefaSelecionada');
-        if (elementoAntigo) {
-            elementoAntigo.setAttribute("id", "");
+function selecionarTarefa(novaTarefa) {
+    novaTarefa.addEventListener('click', function () {
+        let antigaTarefaSelecionada = document.getElementById('tarefaSelecionada');
+        if (antigaTarefaSelecionada) {
+            antigaTarefaSelecionada.setAttribute("id", "");
         }
-        novoElemento.setAttribute("id", "tarefaSelecionada");
-        tarefaSelecionada = novoElemento;
+        novaTarefa.setAttribute("id", "tarefaSelecionada");
+        tarefaSelecionada = novaTarefa;
     })
 }
 
-function apagarTodosElementos() {
-    let numeroDeTarefas = document.getElementsByClassName('tarefa').length - 1;
+function apagarTodasTarefas() {
+    let numeroDeTarefas = document.getElementsByClassName('tarefa').length;
 
-    for (let i = numeroDeTarefas; i >= 0; i--) {
-        let elemento = document.getElementsByClassName('tarefa')[i];
-        elementoPai.removeChild(elemento);
+    for (let i = numeroDeTarefas - 1; i >= 0; i--) {
+        let tarefa = document.getElementsByClassName('tarefa')[i];
+        elementoPai.removeChild(tarefa);
     }
 }
 
-function apagarElementosCompletos() {
-    todosElementos = document.getElementsByTagName('li').length - 1;
-    let elementoCompleto;
+function apagarTarefasCompletas() {
+    let numeroDeTarefas = document.getElementsByTagName('li').length;
+    let tarefaCompleta;
 
-    for (let i = todosElementos; i >= 0; i--) {
-        elementoCompleto = document.getElementsByTagName('li')[i];
-        if (elementoCompleto.style.textDecoration == "line-through") {
-            elementoPai.removeChild(elementoCompleto);
+    for (let i = numeroDeTarefas - 1; i >= 0; i--) {
+        tarefaCompleta = document.getElementsByTagName('li')[i];
+        if (tarefaCompleta.style.textDecoration == "line-through") {
+            elementoPai.removeChild(tarefaCompleta);
         }
     }
 }
 
-function apagarElementoSelecionado() {
+function apagarTarefaSelecionada() {
     elementoPai.removeChild(tarefaSelecionada);
 }
 
-function subirElemento() {
-    proximoElemento = tarefaSelecionada.previousElementSibling;
-    elementoPai.insertBefore(tarefaSelecionada, proximoElemento);
+function subirTarefa() {
+    proximaTarefa = tarefaSelecionada.previousElementSibling;
+    elementoPai.insertBefore(tarefaSelecionada, proximaTarefa);
 }
 
-function descerElemento() {
-    proximoElemento = tarefaSelecionada.nextElementSibling;
-    elementoPai.insertBefore(proximoElemento, tarefaSelecionada);
+function descerTarefa() {
+    proximaTarefa = tarefaSelecionada.nextElementSibling;
+    if (proximaTarefa) {
+        elementoPai.insertBefore(proximaTarefa, tarefaSelecionada);
+    } else {
+        let primeiraTarefa = elementoPai.firstElementChild;
+        elementoPai.insertBefore(tarefaSelecionada, primeiraTarefa);
+    }
 }
 
 function salvarLista() {
@@ -83,31 +88,31 @@ function salvarLista() {
     let lista = [];
     for (let i = 0; i < todosElementos; i++) {
         lista[i] = document.getElementsByTagName('li')[i];
-        localStorage.setItem('lista' + i, lista[i].innerHTML)
+        localStorage.setItem('lista' + i, lista[i].innerHTML);
         //guardando a informação do textDecoration para ser carregada
         if (lista[i].style.textDecoration) {
-            localStorage.setItem('completo' + i, 1)
+            localStorage.setItem('completo' + i, 1);
         } else {
-            localStorage.setItem('completo' + i, 0)
+            localStorage.setItem('completo' + i, 0);
         }
     }
 }
 
 function mostrarListaSalva() {
     //localStorage.length dividido por 2 pois há 2 valores guardados, e eles são percorridos pela chave
-    let tamanhoLocalStorage = localStorage.length / 2;
-    let criarLi;
-    for (let i = 0; i < tamanhoLocalStorage; i++) {
-        criarLi = document.createElement('li');
-        criarLi.setAttribute("class", "tarefa");
-        criarLi.innerHTML = localStorage['lista' + i];
-        elementoPai.appendChild(criarLi);
-        selecionarElemento(criarLi);
-        marcarELementoCompleto(criarLi);
+    let quantidadeTarefasSalvas = localStorage.length / 2;
+    let tarefa;
+    for (let i = 0; i < quantidadeTarefasSalvas; i++) {
+        tarefa = document.createElement('li');
+        tarefa.setAttribute("class", "tarefa");
+        tarefa.innerHTML = localStorage['lista' + i];
+        elementoPai.appendChild(tarefa);
+        selecionarTarefa(tarefa);
+        marcarTarefaCompleta(tarefa);
 
         //adicionando o textDecoration às tarefas que o tinham
         if (localStorage['completo' + i] == "1") {
-            criarLi.style.textDecoration = "line-through";
+            tarefa.style.textDecoration = "line-through";
         }
     }
 }

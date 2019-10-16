@@ -3,19 +3,13 @@
 <html>
 
 <head>
-
     <meta charset="UTF-8">
     <title>LISTA DE TAREFAS</title>
-    <link href="https://fonts.googleapis.com/css?family=Notable|Passion+One&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
     <main class="container">
-
         <div class="cabecalho">
             <p class="textoMaior">Minha lista de tarefas</p>
             <p class="textoMenor">
@@ -23,30 +17,24 @@
                 Clique duas vezes na tarefa para marcá-la como realizada.
             </p>
         </div>
-
         <div class="inputs">
             <input type="text" id="inputtxt">
-            <button class="btn botaoAdicionar" onclick="adicionarTarefa()">Adicionar</button>
+            <button class="botao botaoAdicionar" onclick="adicionarTarefa()">Adicionar</button>
         </div>
-
-        <div class="containerTarefas">
+        <div>
             <ol class="containerOl">
             </ol>
         </div>
-
         <div>
-            <button class="btn botaotipo1" onclick="apagarElementoSelecionado()">X</button>
-            <button class="btn botaotipo2" onclick="subirElemento()"></button>
-            <button class="btn botaotipo3" onclick="descerElemento()"></button>
-            <button class="btn botaotipo4" onclick="apagarElementosCompletos()">Limpar Completos</button>
-            <button class="btn botaotipo5" onclick="apagarTodosElementos()">Limpar Lista</button>
-            <button class="btn botaotipo6" onclick="salvarLista()">Salvar Lista</button>
+            <button class="botao botaoApagarTarefaSelecionada" onclick="apagarTarefaSelecionada()">X</button>
+            <button class="botao botaoSubirTarefa" onclick="subirTarefa()"></button>
+            <button class="botao botaoDescerTarefa" onclick="descerTarefa()"></button>
+            <button class="botao botaoApagarTarefasCompletas" onclick="apagarTarefasCompletas()">Limpar Completos</button>
+            <button class="botao botaoApagarTodasTarefas" onclick="apagarTodasTarefas()">Limpar Lista</button>
+            <button class="botao botaoSalvarlista" onclick="salvarLista()">Salvar Lista</button>
         </div>
-
     </main>
-
     <script src="script.js"></script>
-
 </body>
 
 </html>
