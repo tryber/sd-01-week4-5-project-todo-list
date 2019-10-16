@@ -83,9 +83,26 @@ window.onload = function() {
             }                             
         }) 
     }
-
-
+    
+    function limparTarefasCompletas() {
+        let button = document.querySelector('#btn-limpar-tarefas-completas')
+        button.addEventListener('click', function(){
+            let tarefas = document.getElementsByTagName('li').length - 1
+            let tarefasCompletas
+            let elementoPai = document.querySelector('.lista-ordenada')
+            
+            for(let i = tarefas; i >= 0; i--){
+                tarefasCompletas = document.getElementsByTagName('li')[i]
+                if (tarefasCompletas.style.textDecoration == "line-through") {
+                    elementoPai.removeChild(tarefasCompletas)
+                }
+            }
+        })
+    }
+    
+    
     criandoListaOl()
     ativarBotao()
     inserirInputComEnter()
+    limparTarefasCompletas()
 }
