@@ -4,15 +4,13 @@ function apagar(id) {
 
 function limparCompleto(){
     let pai = document.querySelector("#lista")
-    //aqui foi a forma de pegar como se fosse uma pilha (usar o - para pegar decrescendo)
     let itensCriados = document.getElementsByTagName('li').length - 1
     let itensFeitos, i
     for (i = itensCriados; i >= 0; i--) {
         itensFeitos = document.getElementsByTagName('li')[i]
         if (itensFeitos.style.textDecoration == "line-through") {
-        pai.removeChild(itensFeitos);
-        }
-        
+        pai.removeChild(itensFeitos)
+        }       
     } 
 } 
 
@@ -34,7 +32,7 @@ function adicionarElemento (item, pai) {
     
 }
 
-function adcionarTexto(item, palavra) {
+function adicionarTexto(item, palavra) {
     item.insertAdjacentHTML('afterbegin', palavra)
 }
 
@@ -58,7 +56,6 @@ function escutarEventoClick(itemAdcionado) {
     })       
 }
 
-
 function escutarEventoDblClick(itemAdcionado) {
     itemAdcionado.addEventListener("dblclick", function(){
         if (itemAdcionado.style.textDecoration == "line-through") {
@@ -75,7 +72,7 @@ function minhaFunction(){
     let itemNovo = document.createElement("li")
     let listaDosItens = caixaTexto.value
     adicionarElemento (itemNovo, listaPai)
-    adcionarTexto(itemNovo, listaDosItens)
+    adicionarTexto(itemNovo, listaDosItens)
     escutarEventoDblClick(itemNovo)
     escutarEventoClick(itemNovo)
     caixaTexto.value = ""
