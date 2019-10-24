@@ -1,5 +1,5 @@
 Instruções a seguir:
-Voce pode escrever qualquer coisa na caixa de texto.
+Voce pode escrever qualquer coisa na lista.
 Apos escrever, voce pode clicar no botão ao lado para criar uma lista
 voce pode selecionar o objeto e mover-lo para a prioridade que quiser
 pode deleta-lo apos selecionado.
