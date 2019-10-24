@@ -19,7 +19,7 @@ button {
     cursor: pointer;
     border-top: 1px solid #f797b2;
     background: #a1d665;
-    background:-webkit-gradient(linear, left top, left bottom, from(#9c3e3e), to(#a1d665));
+    background: -webkit-gradient(linear, left top, left bottom, from(#9c3e3e), to(#a1d665));
     background: -webkit-linear-gradient(top, #e1fa00bd, #a1d665);
     background: -moz-linear-gradient(top, #9c3e3e, #add4da);
     background: -ms-linear-gradient(top, #e1fa00bd, #cbeef37e);
@@ -64,12 +64,12 @@ input {
     text-shadow: 0 1px 2px rgba(0,0,0,.1);
     }
 
-input:focus{
+input:focus {
     border-color: rgb(39, 136, 0);
     border-block-start-color: aqua;
     border: 2px solid;
     }
 
-#selecionado{
+#selecionado {
         background-color: aqua;
     }
