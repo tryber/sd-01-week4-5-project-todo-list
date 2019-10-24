@@ -1,0 +1,74 @@
+body {
+    background-image: url("https://backgrounddownload.com/wp-content/uploads/2018/09/background-a%C3%A7o-escovado-azul-8.jpg");
+    font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+.principal {
+    width: 80vw;
+    background-color: rgb(194, 194, 194);
+    border-radius: 50px;
+    padding: 35px;
+    }
+
+button {
+    cursor: pointer;
+    border-top: 1px solid #f797b2;
+    background: #a1d665;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9c3e3e), to(#a1d665));
+    background: -webkit-linear-gradient(top, #e1fa00bd, #a1d665);
+    background: -moz-linear-gradient(top, #9c3e3e, #add4da);
+    background: -ms-linear-gradient(top, #e1fa00bd, #cbeef37e);
+    background: -o-linear-gradient(top, #e1fa00bd, #cbeef37e);
+    padding: 9.5px 19px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #000000;
+    font-size: 16px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    }
+
+button:hover {
+    border-top-color: #786d28;
+    background: #786d28;
+    color: #cccccc;
+    }
+
+button:active {
+    border-top-color: #391b5c;
+    background: #391b5c;
+    }
+
+input {
+    top: 51px;
+    height: 29px;
+    background:rgba(45, 45, 45, 0.52);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica;
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    }
+
+input:focus {
+    border-color: rgb(39, 136, 0);
+    border-block-start-color: aqua;
+    border: 2px solid;
+    }
+
+#selecionado {
+        background-color: aqua;
+    }

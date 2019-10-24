@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>to do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="principal">
+        <h2>Minha lista de tarefa</h2>
+        <span>Clique duas vezes num item para marca-lo como completo</span><br> Adicione aqui→<input type="text" name="item" id="caixaTexto">
+        <button onclick="minhaFunction()">Adcionar</button>
+
+        <ol id="lista"></ol>
+        <button onclick="apagar(selecionado)">X</button>
+        <button onclick="irParaCima()">⇈</button>
+        <button onclick="irParaBaixo()">⇊</button>
+        <button onclick="limparCompleto()">Limpar Completo</button>
+        <button onclick="history.go(0)">Limpar Lista</button>
+        <button onclick="salvarLista()">Salvar Lista</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
