@@ -48,9 +48,19 @@ const completeTask = (event) => {
         if (event.style.textDecoration !== "line-through") {
             event.style.textDecoration = "line-through";
         } else {
-            event.style.textDecoration = "none"
+            event.style.textDecoration = "none";
         }
-    })
+    });
+}
+
+const removeSelected = () => {
+    let tasks = document.querySelectorAll("li");
+    const olTag = document.querySelector("ol");
+    for (let task of tasks) {
+        if (task.style.color == "green"){
+            olTag.removeChild(task)
+        }
+    }
 }
 
 textCap()
