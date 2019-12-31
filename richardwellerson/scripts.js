@@ -35,7 +35,7 @@ function cleenTasks() {
 
 const selectTask = (event) => {
     event.addEventListener("click", () => {
-        if(event.style.background !== "green"){
+        if (event.style.background !== "green") {
             event.style.background = "green";
         } else {
             event.style.background = "white";
