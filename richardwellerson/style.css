@@ -51,3 +51,14 @@ button:hover {
 li:hover {
     cursor: pointer;
 }
+
+.legend {
+    border: 1px solid black;
+    padding-left: 1%;
+    height: 10%;
+    width: auto;
+}
+
+.protract {
+    padding-top: 1%;
+}
