@@ -16,6 +16,7 @@ function orderedList() {
 function liInsert() {
     let genLiValue = document.createElement("li");
     selectTask(genLiValue);
+    completeTask(genLiValue);
     let readyTask = document.querySelector(".task-text").value;
     let capOl = document.getElementsByTagName("ol")[0];
     capOl.appendChild(genLiValue);
@@ -41,6 +42,16 @@ const selectTask = (event) => {
             event.style.background = "white";
         }
     });
+}
+
+const completeTask = (event) => {
+    event.addEventListener("dblclick", () => {
+        if (event.style.textDecoration !== "line-through") {
+            event.style.textDecoration = "line-through";
+        } else {
+            event.style.textDecoration = "none"
+        }
+    })
 }
 
 textCap()
