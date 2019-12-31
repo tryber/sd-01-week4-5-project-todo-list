@@ -1,5 +1,3 @@
-let buttonClear = document.getElementById("clear-all");
-
 function textCap() {
     let addTaskButton = document.querySelector(".add-task");
     addTaskButton.addEventListener("click", function () {
@@ -27,6 +25,7 @@ function liInsert() {
 function cleenTasks() {
     let captureOlTag = document.querySelector("ol");
     let captureLiTag = document.getElementsByTagName("li");
+    let buttonClear = document.getElementById("clear-all");
     buttonClear.addEventListener("click", function () {
         for (i = 0; i < captureLiTag.length; i) {
             captureOlTag.removeChild(captureLiTag[0]);
@@ -36,10 +35,10 @@ function cleenTasks() {
 
 const selectTask = (event) => {
     event.addEventListener("click", () => {
-        if (event.style.background !== "green") {
-            event.style.background = "green";
+        if (event.style.color !== "green") {
+            event.style.color = "green";
         } else {
-            event.style.background = "white";
+            event.style.color = "black";
         }
     });
 }
