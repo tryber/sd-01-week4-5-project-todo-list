@@ -60,7 +60,7 @@ const removeSelected = (event) => {
     const clearSelectedButton = document.querySelector(".remove-selected");
     clearSelectedButton.addEventListener("click", () => {
         if (event.style.color == "green") {
-            olTag.removeChild(event)
+            olTag.removeChild(event);
         }
     });
 }
@@ -70,7 +70,7 @@ const removeCompleted = (event) => {
     const clearCompletedButton = document.querySelector(".remove-completed");
     clearCompletedButton.addEventListener("click", () => {
         if (event.style.textDecoration == "line-through") {
-            olTag.removeChild(event)
+            olTag.removeChild(event);
         }
     });
 }
