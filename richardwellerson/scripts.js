@@ -15,6 +15,7 @@ function orderedList() {
 
 function liInsert() {
     let genLiValue = document.createElement("li")
+    selectTask(genLiValue)
     let readyTask = document.querySelector(".task-text").value
     let capOl = document.getElementsByTagName("ol")[0]
     capOl.appendChild(genLiValue)
@@ -32,16 +33,16 @@ function cleenTasks() {
     })
 }
 
-let selectTask = () => {
-    let arrayTask = document.getElementsByTagName("li")
-    for (let i = 0; i < arrayTask.length; i++) {
-        arrayTask[i].addEventListener("click", () => {
-            arrayTask[i].style.color = "green"
-        })
-    }
+const selectTask = (event) => {
+    event.addEventListener("click", () => {
+        if(event.style.background !== "green"){
+            event.style.background = "green"
+        } else {
+            event.style.background = "white"
+        }
+    })
 }
 
 textCap()
 orderedList()
 cleenTasks()
-selectTask()
