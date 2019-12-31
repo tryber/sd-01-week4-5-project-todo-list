@@ -19,6 +19,7 @@ function liInsert() {
     let capOl = document.getElementsByTagName("ol")[0]
     capOl.appendChild(genLiValue)
     genLiValue.textContent = readyTask
+    document.querySelector(".task-text").value = '';
 }
 
 function cleenTasks() {
