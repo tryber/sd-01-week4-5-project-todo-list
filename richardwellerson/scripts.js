@@ -1,8 +1,8 @@
 let buttonClear = document.getElementById("clear-all")
 
 function textCap() {
-    let addTaskbtn = document.querySelector(".add-task")
-    addTaskbtn.addEventListener("click", function () {
+    let addTaskButton = document.querySelector(".add-task")
+    addTaskButton.addEventListener("click", function () {
         liInsert()
     })
 }
@@ -31,7 +31,7 @@ function cleenTasks() {
     })
 }
 
-const selectTask = () => {
+let selectTask = () => {
     let arrayTask = document.getElementsByTagName("li")
     for (let i = 0; i < arrayTask.length; i++) {
         arrayTask[i].addEventListener("click", () => {
