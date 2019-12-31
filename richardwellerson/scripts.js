@@ -12,13 +12,15 @@ function orderedList() {
 }
 
 function liInsert() {
-    let genLiValue = document.createElement("li");
-    selectTask(genLiValue);
-    completeTask(genLiValue);
+    let liTagCreation = document.createElement("li");
+    selectTask(liTagCreation);
+    completeTask(liTagCreation);
+    removeSelected(liTagCreation);
+    removeCompleted(liTagCreation)
     let readyTask = document.querySelector(".task-text").value;
     let capOl = document.getElementsByTagName("ol")[0];
-    capOl.appendChild(genLiValue);
-    genLiValue.textContent = readyTask;
+    capOl.appendChild(liTagCreation);
+    liTagCreation.textContent = readyTask;
     document.querySelector(".task-text").value = '';
 }
 
@@ -53,14 +55,24 @@ const completeTask = (event) => {
     });
 }
 
-const removeSelected = () => {
-    let tasks = document.querySelectorAll("li");
+const removeSelected = (event) => {
     const olTag = document.querySelector("ol");
-    for (let task of tasks) {
-        if (task.style.color == "green"){
-            olTag.removeChild(task)
+    const clearSelectedButton = document.querySelector(".remove-selected");
+    clearSelectedButton.addEventListener("click", () => {
+        if (event.style.color == "green") {
+            olTag.removeChild(event)
         }
-    }
+    });
+}
+
+const removeCompleted = (event) => {
+    const olTag = document.querySelector("ol");
+    const clearCompletedButton = document.querySelector(".remove-completed");
+    clearCompletedButton.addEventListener("click", () => {
+        if (event.style.textDecoration == "line-through") {
+            olTag.removeChild(event)
+        }
+    });
 }
 
 textCap()
