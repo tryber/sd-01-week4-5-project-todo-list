@@ -6,9 +6,9 @@ function textCap() {
 }
 
 function orderedList() {
-    let genOrdList = document.createElement("ol");
+    let createOlTag = document.createElement("ol");
     let divAdd = document.querySelector(".receive-ol");
-    divAdd.appendChild(genOrdList);
+    divAdd.appendChild(createOlTag);
 }
 
 function liInsert() {
@@ -16,10 +16,11 @@ function liInsert() {
     selectTask(liTagCreation);
     completeTask(liTagCreation);
     removeSelected(liTagCreation);
-    removeCompleted(liTagCreation)
+    removeCompleted(liTagCreation);
+    movingTask(liTagCreation);
     let readyTask = document.querySelector(".task-text").value;
-    let capOl = document.getElementsByTagName("ol")[0];
-    capOl.appendChild(liTagCreation);
+    const father = document.querySelector("ol");
+    father.appendChild(liTagCreation);
     liTagCreation.textContent = readyTask;
     document.querySelector(".task-text").value = '';
 }
@@ -73,6 +74,26 @@ const removeCompleted = (event) => {
             olTag.removeChild(event);
         }
     });
+}
+
+const movingTask = (tag) => {
+    const father = document.querySelector("ol");
+    const upButton = document.querySelector(".up-move");
+    const downButton = document.querySelector(".down-move");
+    upButton.addEventListener("click", () => {
+        if (tag.style.color === "green") {
+            father.insertBefore(tag, tag.previousElementSibling)
+        }
+    })
+    downButton.addEventListener("click", () => {
+        if (tag.style.color === "green") {
+            if (tag === father.lastChild) {
+                father.insertBefore(tag, father.firstElementChild)
+            } else {
+                father.insertBefore(tag.nextElementSibling, tag)
+            }
+        }
+    })
 }
 
 textCap()
