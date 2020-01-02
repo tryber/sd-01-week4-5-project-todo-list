@@ -1,6 +1,18 @@
-// window.onload = () => {
-//     liInsert()
-// }
+window.onload = () => {
+    if (localStorage.length > 0) {
+        for (let i = 0; i < localStorage.length; i++) {
+            const father = document.querySelector("ol");
+            let convertString = new DOMParser().parseFromString(`${localStorage[i]}`, "text/html")
+            let tag = convertString.body.firstChild;
+            father.appendChild(tag)
+            movingTask(tag);
+            selectTask(tag);
+            completeTask(tag);
+            removeSelected(tag);
+            removeCompleted(tag)
+        }
+    }
+}
 
 function textCap() {
     let addTaskButton = document.querySelector(".add-task");
@@ -104,7 +116,7 @@ const saveTasks = () => {
             let teste2 = teste.body.firstChild;
             console.log(task)
             console.log(teste2)
-            localStorage.setItem(`${i}`,`${task}`)
+            localStorage.setItem(`${i}`, `${task}`)
         }
     })
 }
