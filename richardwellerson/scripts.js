@@ -7,14 +7,14 @@ function textCap() {
 
 function liInsert() {
     let liTagCreation = document.createElement("li");
+    let readyTask = document.querySelector(".task-text").value;
+    const father = document.querySelector("ol");
+    father.appendChild(liTagCreation);
     movingTask(liTagCreation);
     selectTask(liTagCreation);
     completeTask(liTagCreation);
     removeSelected(liTagCreation);
     removeCompleted(liTagCreation);
-    let readyTask = document.querySelector(".task-text").value;
-    const father = document.querySelector("ol");
-    father.appendChild(liTagCreation);
     liTagCreation.textContent = readyTask;
     document.querySelector(".task-text").value = '';
 }
@@ -90,5 +90,18 @@ const movingTask = (tag) => {
     })
 }
 
+const saveTasks = () => {
+    const saveButton = document.querySelector(".save-content");
+    let tasks = document.getElementsByTagName("li");
+    let keyToLocalStorage = 0;
+    saveButton.addEventListener("click", () => {
+        for (let task of tasks) {
+            localStorage.setItem(`${keyToLocalStorage}`,`${task.textContent}`)
+            keyToLocalStorage++
+        }
+    })
+}
+
 textCap()
 cleenTasks()
+saveTasks()
