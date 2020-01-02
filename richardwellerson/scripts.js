@@ -5,12 +5,6 @@ function textCap() {
     });
 }
 
-function orderedList() {
-    let createOlTag = document.createElement("ol");
-    let divAdd = document.querySelector(".receive-ol");
-    divAdd.appendChild(createOlTag);
-}
-
 function liInsert() {
     let liTagCreation = document.createElement("li");
     movingTask(liTagCreation);
@@ -28,7 +22,7 @@ function liInsert() {
 function cleenTasks() {
     let captureOlTag = document.querySelector("ol");
     let captureLiTag = document.getElementsByTagName("li");
-    let buttonClear = document.getElementById("clear-all");
+    let buttonClear = document.querySelector(".clear-all");
     buttonClear.addEventListener("click", function () {
         for (i = 0; i < captureLiTag.length; i) {
             captureOlTag.removeChild(captureLiTag[0]);
@@ -97,5 +91,4 @@ const movingTask = (tag) => {
 }
 
 textCap()
-orderedList()
 cleenTasks()
