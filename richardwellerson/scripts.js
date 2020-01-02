@@ -93,11 +93,9 @@ const movingTask = (tag) => {
 const saveTasks = () => {
     const saveButton = document.querySelector(".save-content");
     let tasks = document.getElementsByTagName("li");
-    let keyToLocalStorage = 0;
     saveButton.addEventListener("click", () => {
-        for (let task of tasks) {
-            localStorage.setItem(`${keyToLocalStorage}`,`${task.textContent}`)
-            keyToLocalStorage++
+        for (let task = 0; task < tasks.length; task++) {
+            localStorage.setItem(`${task}`,`${tasks[task].textContent}`)
         }
     })
 }
