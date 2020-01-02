@@ -72,8 +72,9 @@ const removeSelected = (event) => {
     const clearSelectedButton = document.querySelector(".remove-selected");
     clearSelectedButton.addEventListener("click", () => {
         if (event.style.color == "green") {
-            event.style.color = "black"
             olTag.removeChild(event);
+            event.style.color = "black"
+
         }
     });
 }
@@ -116,6 +117,9 @@ const saveTasks = () => {
     const saveButton = document.querySelector(".save-content");
     let tasks = document.getElementsByTagName("li");
     saveButton.addEventListener("click", () => {
+        if (localStorage.length > 0) {
+            localStorage.clear()
+        }
         for (let i = 0; i < tasks.length; i++) {
             let task = tasks[i].outerHTML;
             localStorage.setItem(`${i}`, `${task}`)
