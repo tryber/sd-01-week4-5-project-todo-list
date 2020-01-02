@@ -1,3 +1,7 @@
+// window.onload = () => {
+//     liInsert()
+// }
+
 function textCap() {
     let addTaskButton = document.querySelector(".add-task");
     addTaskButton.addEventListener("click", function () {
@@ -94,8 +98,13 @@ const saveTasks = () => {
     const saveButton = document.querySelector(".save-content");
     let tasks = document.getElementsByTagName("li");
     saveButton.addEventListener("click", () => {
-        for (let task = 0; task < tasks.length; task++) {
-            localStorage.setItem(`${task}`,`${tasks[task].textContent}`)
+        for (let i = 0; i < tasks.length; i++) {
+            let task = tasks[i].outerHTML;
+            let teste = new DOMParser().parseFromString(`${task}`, "text/html")
+            let teste2 = teste.body.firstChild;
+            console.log(task)
+            console.log(teste2)
+            localStorage.setItem(`${i}`,`${task}`)
         }
     })
 }
