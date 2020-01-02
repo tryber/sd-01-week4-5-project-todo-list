@@ -43,6 +43,7 @@ function cleenTasks() {
         for (i = 0; i < captureLiTag.length; i) {
             captureOlTag.removeChild(captureLiTag[0]);
         }
+        localStorage.clear();
     });
 }
 
@@ -71,6 +72,7 @@ const removeSelected = (event) => {
     const clearSelectedButton = document.querySelector(".remove-selected");
     clearSelectedButton.addEventListener("click", () => {
         if (event.style.color == "green") {
+            event.style.color = "black"
             olTag.removeChild(event);
         }
     });
@@ -93,6 +95,8 @@ const movingTask = (tag) => {
     upButton.addEventListener("click", () => {
         if (tag.style.color === "green") {
             father.insertBefore(tag, tag.previousElementSibling)
+        } else {
+            return 0;
         }
     })
     downButton.addEventListener("click", () => {
@@ -102,6 +106,8 @@ const movingTask = (tag) => {
             } else {
                 father.insertBefore(tag.nextElementSibling, tag)
             }
+        } else {
+            return 0;
         }
     })
 }
@@ -112,10 +118,6 @@ const saveTasks = () => {
     saveButton.addEventListener("click", () => {
         for (let i = 0; i < tasks.length; i++) {
             let task = tasks[i].outerHTML;
-            let teste = new DOMParser().parseFromString(`${task}`, "text/html")
-            let teste2 = teste.body.firstChild;
-            console.log(task)
-            console.log(teste2)
             localStorage.setItem(`${i}`, `${task}`)
         }
     })
