@@ -13,11 +13,11 @@ function orderedList() {
 
 function liInsert() {
     let liTagCreation = document.createElement("li");
+    movingTask(liTagCreation);
     selectTask(liTagCreation);
     completeTask(liTagCreation);
     removeSelected(liTagCreation);
     removeCompleted(liTagCreation);
-    movingTask(liTagCreation);
     let readyTask = document.querySelector(".task-text").value;
     const father = document.querySelector("ol");
     father.appendChild(liTagCreation);
