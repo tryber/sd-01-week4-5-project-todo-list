@@ -123,9 +123,14 @@ function showList() {
   }
 }
 
-if (localStorage.comments) {
-  showList();
-  generateStyle();
-  delectedAll();
-  deleteElementsCompleted();
+function enable() {
+  if (localStorage.comments) {
+    showList();
+    generateStyle();
+    delectedAll();
+    deleteElementsCompleted();
+  }
 }
+
+enable();
+
