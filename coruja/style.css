@@ -1,0 +1,53 @@
+button {
+    background: green;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.centralizar-estrutura{
+    text-align: center;
+}
+
+#centrar-elementos-na-pagina {
+    align-items: center;
+    background: #ccc;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+#container {
+    background: hsla(66, 26%, 30%, 0.329);
+    border-radius: 20px;
+    height: auto;
+    width: 500px;
+}
+
+.estilo-botoes {
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.item-selecionado {         
+    color: red;
+    text-decoration: line-through;   
+}
+
+p {
+    color: rgba(92, 70, 70, 0.664);
+    display: flex;
+    justify-content: center;
+}
+
+.selecionado{
+    background-color:gray;
+    opacity: 0.7;
+}
+
+#text-of-information {
+    margin-bottom: 40px;
+}

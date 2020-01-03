@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="centrar-elementos-na-pagina">
+      <div id="container">
+        <h1 class="centralizar-estrutura">Minha lista de atividades</h1>
+        <div id="text-of-information">
+          <p>Clique duas vezes em um item para marcá-lo como selecionado</p>
+          <p>Clique uma vez para selecionar um item específico</p>
+        </div>
+        <div class="centralizar-estrutura">
+          <input type="text" id="adicionar-tarefa" />
+          <button class="estilo-botoes">Adicionar elemento</button>
+        </div>
+        <ol id="lista-de-elementos-adicionados"></ol>
+        <div class="centralizar-estrutura">
+          <button class="estilo-botoes" id="delete-elements-selected">Remover Selecionados</button>
+          <button class="estilo-botoes">Remover Lista</button>
+          <button class="estilo-botoes">X</button>
+          <button class="estilo-botoes" id="upElement">Up</button>
+          <button class="estilo-botoes" id="downElement">Down</button>
+          <button class="estilo-botoes" id="save-list">Salvar lista</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
