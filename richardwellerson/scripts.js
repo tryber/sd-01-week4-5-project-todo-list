@@ -74,7 +74,6 @@ const removeSelected = (event) => {
         if (event.style.color == "green") {
             olTag.removeChild(event);
             event.style.color = "black"
-
         }
     });
 }
@@ -93,6 +92,7 @@ const movingTask = (tag) => {
     const father = document.querySelector("ol");
     const upButton = document.querySelector(".up-move");
     const downButton = document.querySelector(".down-move");
+
     upButton.addEventListener("click", () => {
         if (tag.style.color === "green") {
             father.insertBefore(tag, tag.previousElementSibling)
