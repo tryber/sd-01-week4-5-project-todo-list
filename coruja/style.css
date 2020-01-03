@@ -47,3 +47,7 @@ p {
     background-color:gray;
     opacity: 0.7;
 }
+
+#text-of-information {
+    margin-bottom: 40px;
+}
