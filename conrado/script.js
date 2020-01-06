@@ -10,14 +10,12 @@ window.onload = function() {
         let tag = convertString.body.firstChild;
         myList.appendChild(tag);
         movingTask(tag);
-        selectTask(tag);
-        completeTask(tag);
-        removeSelected(tag);
-        removeCompleted(tag);
+        clickTask(tag);
+        taskChecked(tag);
       }
     }
   }
-
+  printLocalStorage()
   function addLiShowTask() {
     let li = createElementLi();
     let showTask = document.getElementById("task");
