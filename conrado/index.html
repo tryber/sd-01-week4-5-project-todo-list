@@ -7,18 +7,29 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <script type="text/javascript" src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/60af7a200e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="base">
-        <h1>Minha Lista de Tarefas</h1>
-        <p>Check = Clique duas vezes na tarefa</p>
-        <div id="inputText">
-            <input id="inputTask" type="text" placeholder="Adicione um item"></input>
-            <input id="btn" type="button" value="Adicionar"></input>
+        <div class="content-center">
+            <h1>Minha Lista de Tarefas</h1>
+            <p>1 - clique uma vez na task para seleciona-la</p>
+            <p>2 - clique duas vezes na task para completa-la</p>
+
+            <div id="inputText">
+                <input id="inputTask" type="text" placeholder="Adicione um item"></input>
+                <input id="btn" type="button" value="Adicionar"></input>
+            </div>
+            <ol id="task">
+            </ol>
+            <button id="btn-delete"><i class="far fa-trash-alt"></i> Apagar tudo</button>
+            <button id="btn-close"><i class="fa fa-close"></i></button>
+            <button id="btn-clean-checked"><i class="fas fa-tasks"></i> Limpar check</button>
+            <button id="btn-save"><i class="far fa-save"></i> Salvar lista</button>
+            <button id="btn-up"><i class="fas fa-arrow-up"></i></button>
+            <button id="btn-down"><i class="fas fa-arrow-down"></i></button>
         </div>
-        <ol id="task">
-        </ol>
     </div>
     
 </body>

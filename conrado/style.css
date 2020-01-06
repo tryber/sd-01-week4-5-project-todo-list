@@ -1,15 +1,20 @@
 body{
     background-color: #5B44F2;
+    margin: 5px;
 }
 #base{
     background-color: #D5D7F2;
-    width: 1500px;
-    height: 1200px;
-    margin-top: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: 0 auto;
+    padding: 15px;
     border-radius: 10px;
+}
+.content-center{
+    flex-direction: row; 
+    margin: 0 auto; 
+    max-width: 950px;
 }
 h1{
     display: flex;
@@ -20,6 +25,7 @@ h1{
     font-weight: 800;
 }
 p{
+    margin: 0;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -27,25 +33,123 @@ p{
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
+li{
+    margin-top: 20px;
+}
+.checkbox-css{
+    margin-left: -40px;
+    margin-top: 2px;
+    position: absolute;
+}
+.selected{
+    color: red;
+}
 #inputText{
+    align-items: center;
+    flex-direction: row;
+    margin-top: 5%;
     text-align: center;
 }
 #inputTask{
     background-color: fade(#7D6BF2, 40%);
-    width: 800px;
-    height: 30px;
     border-radius: 10px;
+    height: 30px;
     padding-left: 20px;
+    width: 800px;
+}
+#btn-save{
+    background-color: #2AC769;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    width: 130px;
+}
+#btn-save:hover{
+    background-color: #40DD7F;
+}
+#btn-close{
+    background-color: #FB4E4E;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    width: 50px;
+}
+#btn-up{
+    background-color: #5B44F2;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    width: 50px;
+}
+#btn-up:hover{
+    background-color: #6F5AF9;
+}
+#btn-down{
+    background-color: #5B44F2;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    width: 50px;
+}
+#btn-down:hover{
+    background-color: #6F5AF9;
+}
+#btn-close:hover{
+    background-color: #FF6262;
+}
+#btn-delete{
+    background-color: #FB4E4E;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    width: 130px;
+}
+#btn-delete:hover{
+    background-color: #FF6262;
+}
+#btn-clean-checked{
+    background-color: #F6A609;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    width: 130px;
+}
+#btn-clean-checked:hover{
+    background-color: #FFBC1F;
 }
 #btn{
     background-color: #5B44F2;
-    width: 100px;
-    height: 40px;
     border-radius: 10px;
     color: white;
-    padding-left: 10px; 
-    margin-left: 10px;
     cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+    padding-left: 10px; 
+    width: 100px;
+}
+#btn:hover{
+    background-color: #6F5AF9;
+}
+.iconcheck{
+    
 }
 #task{
     color: #5B44F2;
@@ -54,5 +158,8 @@ p{
     text-transform: uppercase;
     margin-top: 2%;
     left: 10px;
-    margin-left: 20%;
+}
+.my-list{
+    padding: 5px;
+    list-style-position: inside;
 }
