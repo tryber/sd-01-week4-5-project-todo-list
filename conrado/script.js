@@ -1,4 +1,23 @@
 window.onload = function() {
+  function printLocalStorage(){
+    if (localStorage.length > 0) {
+      for (let i = 0; i < localStorage.length; i++) {
+        const myList = document.getElementById("task");
+        let convertString = new DOMParser().parseFromString(
+          `${localStorage[i]}`,
+          "text/html"
+        );
+        let tag = convertString.body.firstChild;
+        myList.appendChild(tag);
+        movingTask(tag);
+        selectTask(tag);
+        completeTask(tag);
+        removeSelected(tag);
+        removeCompleted(tag);
+      }
+    }
+  }
+
   function addLiShowTask() {
     let li = createElementLi();
     let showTask = document.getElementById("task");
@@ -7,20 +26,7 @@ window.onload = function() {
     li.innerHTML = inputTask.value;
     inputTask.value = "";
   }
-  if (localStorage.length > 0) {
-    for (let i = 0; i < localStorage.length; i++) {
-      const myList = document.getElementById("task");
-      let convertString = new DOMParser().parseFromString(
-        `${localStorage[i]}`,
-        "text/html"
-      );
-      let tag = convertString.body.firstChild;
-      myList.appendChild(tag);
-      movingTask(tag);
-      clickTask(tag);
-      taskChecked(tag);
-    }
-  }
+
   function createElementLi() {
     let createDiv = document.createElement("li");
     clickTask(createDiv);
@@ -69,7 +75,6 @@ window.onload = function() {
     });
   }
   saveTasks();
-
   function closeSelected(element) {
     let btnClose = document.getElementById("btn-close");
     btnClose.addEventListener("click", function() {
@@ -78,7 +83,10 @@ window.onload = function() {
       }
     });
   }
-  function clickBtnInput() {doubleClickTaskfunction() {
+  function clickBtnInput() {
+    let btn = document.getElementById("btn");
+    let input = document.getElementById("inputTask");
+    btn.addEventListener("click", function() {
       if (!input.value) {
         alert("adicione um item na lista");
       } else {
@@ -110,6 +118,29 @@ window.onload = function() {
     });
   }
   clickBtnCleanChecks();
+  // function clickBtnSaveList(element) {
+  //   let btnDelete = document.getElementById("btn-save");
+  //   btnDelete.addEventListener("click", function() {
+  //     saveStorageList();
+  //   });
+  // }
+  // clickBtnSaveList();
+  // function saveStorageList() {
+  //   let myList = document.getElementsByClassName("my-list");
+  //   for (let i = 0; i < myList.length; i++) {
+  //     const element = myList[i];
+  //     localStorage.setItem(element.innerHTML, element.style.textDecoration);
+  //   }
+  // }
+  // function saveRepeatTask(){
+  //   let myList = document.getElementsByClassName("my-list");
+  //   for (let i = 0; i < myList.length; i++) {
+  //     const element = myList[i];
+  //     localStorage.setItem(element.innerHTML, element.style.textDecoration);
+  //   }
+  // }
+  // saveRepeatTask();
+
   function KeyUpInput() {
     let input = document.getElementById("inputTask");
     input.addEventListener("keydown", function() {
