@@ -11,7 +11,6 @@ window.onload = function() {
         myList.appendChild(tag);
         movingTask(tag);
         clickTask(tag);
-        taskChecked(tag);
       }
     }
   }
@@ -77,7 +76,8 @@ window.onload = function() {
     let btnClose = document.getElementById("btn-close");
     btnClose.addEventListener("click", function() {
       if (element.style.backgroundColor === "mediumturquoise") {
-        element.style.display = "none";
+        element.remove()
+        localStorage.removeItem(element);
       }
     });
   }
@@ -102,6 +102,7 @@ window.onload = function() {
         alert("adicione um item na lista");
       } else {
         myList.innerHTML = "";
+        localStorage.clear()
       }
     });
   }
@@ -116,28 +117,6 @@ window.onload = function() {
     });
   }
   clickBtnCleanChecks();
-  // function clickBtnSaveList(element) {
-  //   let btnDelete = document.getElementById("btn-save");
-  //   btnDelete.addEventListener("click", function() {
-  //     saveStorageList();
-  //   });
-  // }
-  // clickBtnSaveList();
-  // function saveStorageList() {
-  //   let myList = document.getElementsByClassName("my-list");
-  //   for (let i = 0; i < myList.length; i++) {
-  //     const element = myList[i];
-  //     localStorage.setItem(element.innerHTML, element.style.textDecoration);
-  //   }
-  // }
-  // function saveRepeatTask(){
-  //   let myList = document.getElementsByClassName("my-list");
-  //   for (let i = 0; i < myList.length; i++) {
-  //     const element = myList[i];
-  //     localStorage.setItem(element.innerHTML, element.style.textDecoration);
-  //   }
-  // }
-  // saveRepeatTask();
 
   function KeyUpInput() {
     let input = document.getElementById("inputTask");
@@ -153,12 +132,6 @@ window.onload = function() {
   }
   KeyUpInput();
 
-  // function createElementInput(){
-  //     let input = document.createElement("input");
-  //     input.type = "checkbox";
-  //     input.className = "checkbox-css";
-  //     return input
-  // }
 };
 function clickTask(element) {
   element.addEventListener("click", () => {
